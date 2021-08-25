@@ -12,7 +12,6 @@ import com.thecode.dagger_hilt_mvvm.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
-// @ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
 

@@ -2,6 +2,5 @@ TODO
 
 1. update to use androidx navigation component to navigate to dialog fragment using findNavigationController and navGraph
 2. update DialogFragment to use the new layoutbinding (this wil be a custom dialog that will show the contents of the selected viewholder)
-3. setup a splash activity screen
-4. create a new project that supports Android compose for the main screen - will need to migrate this to another project using android studio preview
-5. cleanup all detekt errors - just packagename errors to resolve
+3. create a new project that supports Android compose for the main screen - will need to migrate this to another project using android studio preview
+4. cleanup all detekt errors - just packagename errors to resolve
