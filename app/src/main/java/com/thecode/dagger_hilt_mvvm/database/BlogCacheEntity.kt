@@ -9,7 +9,7 @@ data class BlogCacheEntity(
 
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "id")
-    var id: Int,
+    var id: Long,
 
     @ColumnInfo(name = "title")
     var title: String,
@@ -22,6 +22,4 @@ data class BlogCacheEntity(
 
     @ColumnInfo(name = "image")
     var image: String
-
-
 )

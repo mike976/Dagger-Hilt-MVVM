@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+    <ManuallySuppressedIssues></ManuallySuppressedIssues>
+    <CurrentIssues>
+
+        <!--
+            Help Guide:
+            If a code smell needs to be supressed then please do the following:
+                1. run detekt to force the code smell error
+                2. insert the baseline for code smell by this format <RuleID>:<Codesmell_Signature>
+                   RuleID is the name of the Rule e.g MaxLineLength
+                   Codesmell_Signature - goto the the detekt.txt report found in the project main folder/reports/detekt.txt
+                   (switch to project view to find it)
+                   There you will find the Signature to copy over.
+
+                   <ID>TooGenericExceptionCaught:SetupDeviceRemoteDataSource.kt$SetupDeviceRemoteDataSource$e: Exception</ID>
+        <-->
+
+    </CurrentIssues>
+</SmellBaseline>

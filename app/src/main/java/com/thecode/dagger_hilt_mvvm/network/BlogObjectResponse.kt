@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 data class BlogObjectResponse(
     @SerializedName("pk")
     @Expose
-    var id: Int,
+    var id: Long,
 
     @SerializedName("title")
     @Expose

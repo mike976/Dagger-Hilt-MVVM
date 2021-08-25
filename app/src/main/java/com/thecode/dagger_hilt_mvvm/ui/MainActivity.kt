@@ -11,13 +11,13 @@ import com.thecode.dagger_hilt_mvvm.model.Blog
 import com.thecode.dagger_hilt_mvvm.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 
-@ExperimentalCoroutinesApi
+// @ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
+
     private val viewModel: MainViewModel by viewModels()
-    private lateinit var adapter: BlogAdapter
+    private val adapter: BlogAdapter by lazy { BlogAdapter(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
         swipeRefreshLayout.setOnRefreshListener {
             viewModel.setStateEvent(MainStateEvent.GetBlogEvents)
         }
-
     }
 
     private fun subscribeObservers() {
@@ -50,7 +49,6 @@ class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
         })
     }
 
-
     private fun displayError(message: String?) {
         if (message.isNullOrEmpty()) {
             Toast.makeText(this, message, Toast.LENGTH_LONG).show()
@@ -64,11 +62,10 @@ class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
     }
 
     private fun populateRecyclerView(blogs: List<Blog>) {
-        if (blogs.isNotEmpty()) adapter.setItems(ArrayList(blogs))
+        if (blogs.isNotEmpty()) adapter.submitList(ArrayList(blogs))
     }
 
     private fun setupRecyclerView() {
-        adapter = BlogAdapter(this)
         blog_recyclerview.layoutManager = LinearLayoutManager(this)
         blog_recyclerview.adapter = adapter
     }
@@ -76,5 +73,4 @@ class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
     override fun onClickedBlog(blogTitle: CharSequence) {
         Toast.makeText(this, blogTitle, Toast.LENGTH_SHORT).show()
     }
-
 }

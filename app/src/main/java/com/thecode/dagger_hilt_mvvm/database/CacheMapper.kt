@@ -30,5 +30,4 @@ constructor() : EntityMapper<BlogCacheEntity, Blog> {
     fun mapFromEntityList(entities: List<BlogCacheEntity>): List<Blog> {
         return entities.map { mapFromEntity(it) }
     }
-
 }

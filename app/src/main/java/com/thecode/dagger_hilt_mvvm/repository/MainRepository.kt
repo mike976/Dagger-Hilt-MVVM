@@ -17,6 +17,7 @@ constructor(
     private val cacheMapper: CacheMapper,
     private val blogMapper: BlogMapper
 ) {
+    @Suppress("MagicNumber", "TooGenericExceptionCaught")
     suspend fun getBlog(): Flow<DataState<List<Blog>>> = flow {
         emit(DataState.Loading)
         delay(1000)

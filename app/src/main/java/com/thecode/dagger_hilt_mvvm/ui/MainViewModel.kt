@@ -1,20 +1,23 @@
 package com.thecode.dagger_hilt_mvvm.ui
 
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.thecode.dagger_hilt_mvvm.AppDispatchers
 import com.thecode.dagger_hilt_mvvm.model.Blog
 import com.thecode.dagger_hilt_mvvm.repository.MainRepository
 import com.thecode.dagger_hilt_mvvm.util.DataState
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@HiltViewModel
 class MainViewModel
-@ViewModelInject
-constructor(
+@Inject constructor(
     private val mainRepository: MainRepository,
-    @Assisted private val savedStateHandle: SavedStateHandle
+    private val appDispatchers: AppDispatchers
 ) : ViewModel() {
     private val _dataState: MutableLiveData<DataState<List<Blog>>> = MutableLiveData()
 
@@ -22,14 +25,18 @@ constructor(
         get() = _dataState
 
     fun setStateEvent(mainStateEvent: MainStateEvent) {
-        viewModelScope.launch {
+        viewModelScope.launch(appDispatchers.default) {
             when (mainStateEvent) {
                 is MainStateEvent.GetBlogEvents -> {
-                    mainRepository.getBlog()
-                        .onEach { dataState ->
-                            _dataState.value = dataState
-                        }
-                        .launchIn(viewModelScope)
+//                     mainRepository.getBlog()
+//                        .onEach { dataState ->
+//                            _dataState.value = dataState
+//                        }
+//                        .launchIn(viewModelScope)
+
+                    mainRepository.getBlog().collect {
+                        _dataState.postValue(it)
+                    }
                 }
 
                 is MainStateEvent.None -> {
@@ -40,9 +47,7 @@ constructor(
     }
 }
 
-
 sealed class MainStateEvent {
     object GetBlogEvents : MainStateEvent()
     object None : MainStateEvent()
 }
-
