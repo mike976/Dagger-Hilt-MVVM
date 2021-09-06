@@ -4,3 +4,29 @@ TODO
 2. update DialogFragment to use the new layoutbinding (this wil be a custom dialog that will show the contents of the selected viewholder)
 3. create a new project that supports Android compose for the main screen - will need to migrate this to another project using android studio preview
 4. cleanup all detekt errors - just packagename errors to resolve
+
+To run ./gradlew for new projects:
+
+1. Via Android Studio - Terminal - run the following:
+
+ chmod +x gradlew
+
+ This will give file permissions to the project's gradlew bat file
+
+2. Via Android Studio - Terminal - run the following:
+
+ ./gradlew tasks
+
+ This will return a list of ./gradlew commands
+
+3. To run all unit tests, via Android Studio - Terminal - run the following:
+
+ ./gradlew test
+
+4. To run detekt, via Android Studio - Terminal - run the following:
+
+  ./gradlew detekt
+
+5. To run lint, via Android Studio - Terminal - run the following:
+
+    ./gradlew lint
