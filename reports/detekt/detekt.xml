@@ -30,6 +30,10 @@
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/BlogViewHolder.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogDao.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />

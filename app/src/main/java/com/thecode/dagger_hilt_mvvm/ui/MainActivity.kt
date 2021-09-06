@@ -6,11 +6,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.thecode.dagger_hilt_mvvm.R
+import com.thecode.dagger_hilt_mvvm.databinding.ActivityMainBinding
 import com.thecode.dagger_hilt_mvvm.model.Blog
 import com.thecode.dagger_hilt_mvvm.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
@@ -18,14 +17,20 @@ class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
     private val viewModel: MainViewModel by viewModels()
     private val adapter: BlogAdapter by lazy { BlogAdapter(this) }
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
         setupRecyclerView()
         subscribeObservers()
         viewModel.setStateEvent(MainStateEvent.GetBlogEvents)
 
-        swipeRefreshLayout.setOnRefreshListener {
+        binding.swipeRefreshLayout.setOnRefreshListener {
             viewModel.setStateEvent(MainStateEvent.GetBlogEvents)
         }
     }
@@ -57,7 +62,7 @@ class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
     }
 
     private fun displayLoading(isLoading: Boolean) {
-        swipeRefreshLayout.isRefreshing = isLoading
+        binding.swipeRefreshLayout.isRefreshing = isLoading
     }
 
     private fun populateRecyclerView(blogs: List<Blog>) {
@@ -65,8 +70,8 @@ class MainActivity : AppCompatActivity(), BlogAdapter.BlogItemListener {
     }
 
     private fun setupRecyclerView() {
-        blog_recyclerview.layoutManager = LinearLayoutManager(this)
-        blog_recyclerview.adapter = adapter
+        binding.blogRecyclerview.layoutManager = LinearLayoutManager(this)
+        binding.blogRecyclerview.adapter = adapter
     }
 
     override fun onClickedBlog(blogTitle: CharSequence) {
