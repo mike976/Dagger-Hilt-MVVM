@@ -4,9 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/blogFragment">
+
     <fragment
         android:id="@+id/blogFragment"
         android:name="com.thecode.dagger_hilt_mvvm.ui.BlogFragment"
         android:label="@string/fragment_blog"
-        tools:layout="@layout/fragment_blog" />
+        tools:layout="@layout/fragment_blog">
+        <action
+            android:id="@+id/action_blogFragment_to_blankFragment"
+            app:destination="@id/blankFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.thecode.dagger_hilt_mvvm.ui.BlankFragment"
+        android:label="@string/fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_blankFragment_to_blogFragment"
+            app:destination="@id/blogFragment" />
+    </fragment>
 </navigation>

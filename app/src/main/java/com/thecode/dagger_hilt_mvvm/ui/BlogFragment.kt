@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.thecode.dagger_hilt_mvvm.R
 import com.thecode.dagger_hilt_mvvm.databinding.FragmentBlogBinding
 import com.thecode.dagger_hilt_mvvm.model.Blog
 import com.thecode.dagger_hilt_mvvm.util.DataState
@@ -43,6 +46,15 @@ class BlogFragment : Fragment(), BlogAdapter.BlogItemListener {
         binding.swipeRefreshLayout.setOnRefreshListener {
             viewModel.setStateEvent(MainStateEvent.GetBlogEvents)
         }
+
+        binding.navigateToButton.setOnClickListener {
+            findNavController().navigate(R.id.action_blogFragment_to_blankFragment)
+        }
+    }
+
+    private fun setupRecyclerView() {
+        binding.blogRecyclerview.layoutManager = LinearLayoutManager(context)
+        binding.blogRecyclerview.adapter = adapter
     }
 
     private fun subscribeObservers() {
@@ -73,15 +85,13 @@ class BlogFragment : Fragment(), BlogAdapter.BlogItemListener {
 
     private fun displayLoading(isLoading: Boolean) {
         binding.swipeRefreshLayout.isRefreshing = isLoading
+        binding.navigateToButton.isVisible = isLoading.not()
     }
 
     private fun populateRecyclerView(blogs: List<Blog>) {
-        if (blogs.isNotEmpty()) adapter.submitList(ArrayList(blogs))
-    }
-
-    private fun setupRecyclerView() {
-        binding.blogRecyclerview.layoutManager = LinearLayoutManager(context)
-        binding.blogRecyclerview.adapter = adapter
+        if (blogs.isNotEmpty()) {
+            adapter.submitList(ArrayList(blogs))
+        }
     }
 
     override fun onClickedBlog(blogTitle: CharSequence) {

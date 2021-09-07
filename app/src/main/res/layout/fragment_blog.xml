@@ -12,8 +12,27 @@
     app:layout_constraintEnd_toEndOf="parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/blog_list_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:text="Navigate To Via Nav Graph"
+            android:id="@+id/navigateToButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/MarginXXXXLarge"
+            android:layout_marginTop="@dimen/MarginXXXXLarge"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/blog_recyclerview"
+            tools:visibility="visible"
+            />
+
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -28,11 +47,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/blog_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/navigateToButton"
             tools:listitem="@layout/item_blog" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

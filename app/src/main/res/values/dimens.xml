@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="MarginxXXSmall">2dp</dimen>
+    <dimen name="MarginXXSmall">4dp</dimen>
+    <dimen name="MarginXSmall">8dp</dimen>
+    <dimen name="MarginSmall">12dp</dimen>
+    <dimen name="MarginMedium">16dp</dimen>
+    <dimen name="MarginXMedium">20dp</dimen>
+    <dimen name="MarginLarge">24dp</dimen>
+    <dimen name="MarginXLarge">28dp</dimen>
+    <dimen name="MarginXXLarge">32dp</dimen>
+    <dimen name="MarginXXXLarge">40dp</dimen>
+    <dimen name="MarginXXXXLarge">48dp</dimen>
+    <dimen name="MarginXXXXXLarge">60dp</dimen>
+    <dimen name="Margin6XLarge">92dp</dimen>
+    <dimen name="Margin7XLarge">164dp</dimen>
+
+    <dimen name="TextXXXXLarge">50sp</dimen>
+    <dimen name="TextXXXLarge">44sp</dimen>
+    <dimen name="TextXXLarge">32sp</dimen>
+    <dimen name="TextXLarge">24sp</dimen>
+    <dimen name="TextLarge">22sp</dimen>
+    <dimen name="TextMedium">18sp</dimen>
+    <dimen name="TextSmall">16sp</dimen>
+    <dimen name="TextXSmall">14sp</dimen>
+    <dimen name="TextXXSmall">12sp</dimen>
+
+</resources>
