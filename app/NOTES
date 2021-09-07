@@ -2,7 +2,8 @@ TODO
 
 1. update to use androidx navigation component to navigate to dialog fragment using findNavigationController and navGraph
 2. update DialogFragment to use a android compose view to display a simple list without the need of recyclerview+viewholder, which is a benefit of android compose
-3. cleanup all detekt errors - just packagename errors to resolve
+3. create a new fragment to navigate to that utilize ui control chainin
+4. cleanup all detekt errors - just packagename errors to resolve
 
 To run ./gradlew for new projects:
 

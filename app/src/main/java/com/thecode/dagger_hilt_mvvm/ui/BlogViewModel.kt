@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel
+class BlogViewModel
 @Inject constructor(
     private val mainRepository: MainRepository,
     private val appDispatchers: AppDispatchers

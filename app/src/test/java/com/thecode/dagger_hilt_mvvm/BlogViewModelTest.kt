@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.thecode.dagger_hilt_mvvm.model.Blog
 import com.thecode.dagger_hilt_mvvm.repository.MainRepository
 import com.thecode.dagger_hilt_mvvm.ui.MainStateEvent
-import com.thecode.dagger_hilt_mvvm.ui.MainViewModel
+import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel
 import com.thecode.dagger_hilt_mvvm.util.DataState
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
@@ -21,7 +21,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class MainViewModelTest {
+class BlogViewModelTest {
 
 //    @get:Rule
 //    var mainCoroutineRule = MainCoroutineRule()
@@ -34,7 +34,7 @@ class MainViewModelTest {
     @JvmField
     val instantExecutorRule = InstantTaskExecutorRule()
 
-    lateinit var classUnderTest: MainViewModel
+    lateinit var classUnderTest: BlogViewModel
 
     @MockK
     private lateinit var mainRepository: MainRepository
@@ -50,7 +50,7 @@ class MainViewModelTest {
 
         coEvery { mainRepository.getBlog() } answers { blogsFlow }
 
-        classUnderTest = MainViewModel(mainRepository, appDispatchers)
+        classUnderTest = BlogViewModel(mainRepository, appDispatchers)
     }
 
     @After

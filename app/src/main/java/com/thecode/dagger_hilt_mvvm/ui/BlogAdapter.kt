@@ -33,4 +33,9 @@ class BlogAdapter(
     override fun onBindViewHolder(holder: BlogViewHolder, position: Int) {
         holder.bind(getItem(position), listener)
     }
+
+    override fun getItemCount(): Int {
+        val c = super.getItemCount()
+        return c
+    }
 }

@@ -72,11 +72,11 @@ pre {
 
 <div>
   <ul>
-    <li>41 number of properties</li>
-    <li>48 number of functions</li>
-    <li>31 number of classes</li>
+    <li>43 number of properties</li>
+    <li>51 number of functions</li>
+    <li>32 number of classes</li>
     <li>8 number of packages</li>
-    <li>29 number of kt files</li>
+    <li>30 number of kt files</li>
   </ul>
 </div>
 
@@ -85,25 +85,25 @@ pre {
 
 <div>
   <ul>
-    <li>883 lines of code (loc)</li>
-    <li>671 source lines of code (sloc)</li>
-    <li>388 logical lines of code (lloc)</li>
+    <li>919 lines of code (loc)</li>
+    <li>700 source lines of code (sloc)</li>
+    <li>404 logical lines of code (lloc)</li>
     <li>39 comment lines of code (cloc)</li>
-    <li>57 cyclomatic complexity (mcc)</li>
+    <li>61 cyclomatic complexity (mcc)</li>
     <li>10 cognitive complexity</li>
-    <li>52 number of total code smells</li>
+    <li>54 number of total code smells</li>
     <li>5% comment source ratio</li>
-    <li>146 mcc per 1,000 lloc</li>
-    <li>134 code smells per 1,000 lloc</li>
+    <li>150 mcc per 1,000 lloc</li>
+    <li>133 code smells per 1,000 lloc</li>
   </ul>
 </div>
 
 
 <h2>Findings</h2>
-<div>Total: 52
-  <h3>formatting: 29</h3>
+<div>Total: 54
+  <h3>formatting: 30</h3>
   <details id="PackageName" open="open">
-    <summary class="rule-container"><span class="rule">PackageName: 29 </span><span class="description">Checks package name is formatted correctly</span></summary>
+    <summary class="rule-container"><span class="rule">PackageName: 30 </span><span class="description">Checks package name is formatted correctly</span></summary>
     <ul>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/androidTest/java/com/thecode/dagger_hilt_mvvm/ExampleInstrumentedTest.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
@@ -238,6 +238,13 @@ pre {
 <span class="lineno">   4 </span>import android.view.ViewGroup
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/BlogFragment.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import android.os.Bundle
+<span class="lineno">   4 </span>import androidx.fragment.app.Fragment
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/BlogViewHolder.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
 <span class="lineno">   2 </span>
@@ -245,18 +252,18 @@ pre {
 <span class="lineno">   4 </span>import android.view.ViewGroup
 </code></pre>
       </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/MainActivity.kt:1:1</span><span class="message">Package name must not contain underscore</span>
-        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import android.os.Bundle
-<span class="lineno">   4 </span>import android.widget.Toast
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/MainViewModel.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/BlogViewModel.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>import androidx.lifecycle.LiveData
 <span class="lineno">   4 </span>import androidx.lifecycle.MutableLiveData
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/MainActivity.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import android.os.Bundle
+<span class="lineno">   4 </span>import androidx.appcompat.app.AppCompatActivity
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/util/DataState.kt:1:1</span><span class="message">Package name must not contain underscore</span>
@@ -273,6 +280,13 @@ pre {
 <span class="lineno">   4 </span>
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/BlogViewModelTest.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.model.Blog
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/ExampleUnitTest.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
 <span class="lineno">   2 </span>
@@ -285,13 +299,6 @@ pre {
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>import kotlinx.coroutines.Dispatchers
 <span class="lineno">   4 </span>import kotlinx.coroutines.test.TestCoroutineDispatcher
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/MainViewModelTest.kt:1:1</span><span class="message">Package name must not contain underscore</span>
-        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.model.Blog
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/TestAppDispatchers.kt:1:1</span><span class="message">Package name must not contain underscore</span>
@@ -310,9 +317,9 @@ pre {
       </li>
     </ul>
   </details>
-  <h3>naming: 23</h3>
+  <h3>naming: 24</h3>
   <details id="PackageNaming" open="open">
-    <summary class="rule-container"><span class="rule">PackageNaming: 23 </span><span class="description">Package names should match the naming convention set in the configuration.</span></summary>
+    <summary class="rule-container"><span class="rule">PackageNaming: 24 </span><span class="description">Package names should match the naming convention set in the configuration.</span></summary>
     <ul>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/AppDispatchers.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
@@ -440,6 +447,13 @@ pre {
 <span class="lineno">   4 </span>import android.view.ViewGroup
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/BlogFragment.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import android.os.Bundle
+<span class="lineno">   4 </span>import androidx.fragment.app.Fragment
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/BlogViewHolder.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
 <span class="lineno">   2 </span>
@@ -447,18 +461,18 @@ pre {
 <span class="lineno">   4 </span>import android.view.ViewGroup
 </code></pre>
       </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/MainActivity.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
-        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import android.os.Bundle
-<span class="lineno">   4 </span>import android.widget.Toast
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/MainViewModel.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/BlogViewModel.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>import androidx.lifecycle.LiveData
 <span class="lineno">   4 </span>import androidx.lifecycle.MutableLiveData
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/MainActivity.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import android.os.Bundle
+<span class="lineno">   4 </span>import androidx.appcompat.app.AppCompatActivity
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/util/DataState.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
@@ -480,7 +494,7 @@ pre {
 </div>
 
 
-generated with <a href="https://arturbosch.github.io/detekt">detekt version 1.15.0</a> on 2021-09-06 15:09:57 UTC.
+generated with <a href="https://arturbosch.github.io/detekt">detekt version 1.15.0</a> on 2021-09-07 15:31:10 UTC.
 
 </body>
 </html>

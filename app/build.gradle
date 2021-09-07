@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'io.gitlab.arturbosch.detekt'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion 29
@@ -40,6 +41,7 @@ android {
 dependencies {
 
     implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     def okhttpVersion = "4.9.1"
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -66,7 +68,6 @@ dependencies {
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
     kaptAndroidTest "androidx.hilt:hilt-compiler:$hilt_jetpack_version"
 
-
     //Lifecycle
     def lifecycle_version = "2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -85,6 +86,10 @@ dependencies {
     // okHttp
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
     implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+
+    //Navigation Component
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
