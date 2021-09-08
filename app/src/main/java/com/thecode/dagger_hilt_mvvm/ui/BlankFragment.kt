@@ -27,7 +27,7 @@ class BlankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.navigateBackkButton.setOnClickListener {
+        binding.navigateBackButton.setOnClickListener {
             findNavController().navigate(R.id.action_blankFragment_to_blogFragment)
         }
     }

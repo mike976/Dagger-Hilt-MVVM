@@ -3,4 +3,7 @@
     <string name="welcome_to_dagger_hilt_mvvm">Welcome To Dagger Hilt MVVM</string>
     <string name="fragment_blog">Blog Fragment</string>
     <string name="fragment_blank">Blank Fragment</string>
+    <string name="blank_subtitle">This is a subtitle</string>
+    <string name="blank_title">This is the title</string>
+    <string name="navigate_back_button_title">Navigate back via Nav Graph</string>
 </resources>

@@ -4,4 +4,13 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="blog_item_background">#FFF</color>
+
+    <!-- Try avoid using these from layouts or code, instead use existing variables from colors.xml or add new ones there-->
+    <!-- alpha percentages to hex values: https://stackoverflow.com/a/17239853/1153918 -->
+
+    <!-- Greys -->
+    <color name="black">#161B20</color>
+    <color name="onSurface">@color/black</color>
+    <color name="onSurfaceLight">@color/grey_1</color>
+
 </resources>

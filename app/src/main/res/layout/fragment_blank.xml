@@ -7,15 +7,61 @@
     tools:context=".ui.BlankFragment">
 
     <Button
-        android:id="@+id/navigateBackkButton"
+        android:id="@+id/navigateBackButton"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="Navigate back via Nav Graph"
+        android:layout_marginHorizontal="@dimen/MarginXXXLarge"
+        android:text="@string/navigate_back_button_title"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/blankImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
     </Button>
+
+    <ImageView
+        android:id="@+id/blankImage"
+        android:layout_width="@dimen/MarginXXXLarge"
+        android:layout_height="@dimen/MarginXXXLarge"
+        app:layout_constraintTop_toBottomOf="@id/navigateBackButton"
+        app:layout_constraintBottom_toTopOf="@id/blankTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/ic_baseline_play_circle_outline_24"
+        android:importantForAccessibility="no"
+        />
+
+    <TextView
+        android:id="@+id/blankTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/blankImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/blankSubtitle"
+        style="@style/Text.Headline3"
+        android:textColor="@color/onSurfaceLight"
+        android:textIsSelectable="false"
+        android:text="@string/blank_title"
+        android:layout_marginHorizontal="@dimen/MarginXLarge"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/blankSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/blankTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/MarginXSmall"
+        style="@style/Text.Body1"
+        android:textColor="@color/onSurfaceLight"
+        android:textIsSelectable="false"
+        android:layout_marginHorizontal="@dimen/MarginXLarge"
+        android:text="@string/blank_subtitle"
+        android:gravity="center"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
