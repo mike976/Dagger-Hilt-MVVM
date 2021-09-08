@@ -1,10 +1,12 @@
-package com.thecode.dagger_hilt_mvvm
+package com.thecode.dagger_hilt_mvvm.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.thecode.dagger_hilt_mvvm.TestAppDispatchers
+import com.thecode.dagger_hilt_mvvm.emptyBlogModel
 import com.thecode.dagger_hilt_mvvm.model.Blog
-import com.thecode.dagger_hilt_mvvm.repository.MainRepository
 import com.thecode.dagger_hilt_mvvm.ui.MainStateEvent
 import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel
+import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
 import com.thecode.dagger_hilt_mvvm.util.DataState
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
@@ -37,10 +39,11 @@ class BlogViewModelTest {
     lateinit var classUnderTest: BlogViewModel
 
     @MockK
-    private lateinit var mainRepository: MainRepository
+    private lateinit var blogUseCase: BlogUseCase
 
     private val blogsFlow = MutableStateFlow<DataState<List<Blog>>>(DataState.Success(listOf(
-        emptyBlogModel())))
+        emptyBlogModel()
+    )))
 
     @Before
     fun setUp() {
@@ -48,9 +51,9 @@ class BlogViewModelTest {
 
         Dispatchers.setMain(defaultDispatcher)
 
-        coEvery { mainRepository.getBlog() } answers { blogsFlow }
+        coEvery { blogUseCase.getBlog() } answers { blogsFlow }
 
-        classUnderTest = BlogViewModel(mainRepository, appDispatchers)
+        classUnderTest = BlogViewModel(blogUseCase, appDispatchers)
     }
 
     @After
@@ -65,7 +68,7 @@ class BlogViewModelTest {
         classUnderTest.setStateEvent(MainStateEvent.GetBlogEvents)
 
         // Then
-        coVerify { mainRepository.getBlog() }
+        coVerify { blogUseCase.getBlog() }
     }
 
     @Test
@@ -73,7 +76,8 @@ class BlogViewModelTest {
         runBlockingTest {
 
         // Given
-        var blogs = listOf(emptyBlogModel().copy(
+        var blogs = listOf(
+            emptyBlogModel().copy(
             id = 1,
             title = "new Blog"
         ))

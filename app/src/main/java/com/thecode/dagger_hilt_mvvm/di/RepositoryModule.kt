@@ -4,7 +4,7 @@ import com.thecode.dagger_hilt_mvvm.database.BlogDao
 import com.thecode.dagger_hilt_mvvm.database.CacheMapper
 import com.thecode.dagger_hilt_mvvm.network.BlogApi
 import com.thecode.dagger_hilt_mvvm.network.BlogMapper
-import com.thecode.dagger_hilt_mvvm.repository.MainRepository
+import com.thecode.dagger_hilt_mvvm.repository.BlogRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +22,7 @@ object RepositoryModule {
         blogApi: BlogApi,
         cacheMapper: CacheMapper,
         blogMapper: BlogMapper
-    ): MainRepository {
-        return MainRepository(blogDao, blogApi, cacheMapper, blogMapper)
+    ): BlogRepository {
+        return BlogRepository(blogDao, blogApi, cacheMapper, blogMapper)
     }
 }

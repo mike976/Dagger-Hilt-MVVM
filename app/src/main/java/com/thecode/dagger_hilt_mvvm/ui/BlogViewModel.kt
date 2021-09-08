@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.thecode.dagger_hilt_mvvm.AppDispatchers
 import com.thecode.dagger_hilt_mvvm.model.Blog
-import com.thecode.dagger_hilt_mvvm.repository.MainRepository
+import com.thecode.dagger_hilt_mvvm.repository.BlogRepository
+import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
 import com.thecode.dagger_hilt_mvvm.util.DataState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
@@ -16,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class BlogViewModel
 @Inject constructor(
-    private val mainRepository: MainRepository,
+    private val blogUseCase: BlogUseCase,
     private val appDispatchers: AppDispatchers
 ) : ViewModel() {
     private val _dataState: MutableLiveData<DataState<List<Blog>>> = MutableLiveData()
@@ -28,13 +29,13 @@ class BlogViewModel
         viewModelScope.launch(appDispatchers.default) {
             when (mainStateEvent) {
                 is MainStateEvent.GetBlogEvents -> {
-//                     mainRepository.getBlog()
+//                     blogUseCase.getBlog()
 //                        .onEach { dataState ->
 //                            _dataState.value = dataState
 //                        }
 //                        .launchIn(viewModelScope)
 
-                    mainRepository.getBlog().collect {
+                    blogUseCase.getBlog().collect {
                         _dataState.postValue(it)
                     }
                 }

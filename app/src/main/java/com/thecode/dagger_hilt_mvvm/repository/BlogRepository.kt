@@ -10,7 +10,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class MainRepository
+class BlogRepository
 constructor(
     private val blogDao: BlogDao,
     private val blogApi: BlogApi,
