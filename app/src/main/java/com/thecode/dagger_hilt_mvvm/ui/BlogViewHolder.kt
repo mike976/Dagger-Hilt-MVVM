@@ -18,8 +18,8 @@ class BlogViewHolder(
         parent: ViewGroup
     ) : this(ItemBlogBinding.inflate(inflater, parent, false))
 
-    fun bind(item: Blog, listener: BlogAdapter.BlogItemListener) {
-        itemView.setOnClickListener { listener.onClickedBlog(binding.textTitle.text) }
+    fun bind(item: Blog, listener: BlogAdapter.BlogItemListener, currentList: List<Blog>) {
+        itemView.setOnClickListener { listener.onClickedBlog(binding.textTitle.text, currentList) }
         binding.textTitle.text = item.title
         binding.textDescription.text = item.body
 

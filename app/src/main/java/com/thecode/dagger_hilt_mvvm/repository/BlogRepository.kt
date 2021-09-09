@@ -6,6 +6,8 @@ import com.thecode.dagger_hilt_mvvm.common.OnlineManager
 import com.thecode.dagger_hilt_mvvm.common.onSuccess
 import com.thecode.dagger_hilt_mvvm.common.onFailure
 import com.thecode.dagger_hilt_mvvm.model.Blog
+import com.thecode.dagger_hilt_mvvm.model.BlogSelected
+import com.thecode.dagger_hilt_mvvm.workmanager.BlogSelectedScheduler
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
@@ -16,9 +18,14 @@ import javax.inject.Singleton
 class BlogRepository @Inject constructor(
     private val api: BlogRemoteDataSource,
     private val db: BlogLocalDataSource,
-    private val onlineManager: OnlineManager
+    private val onlineManager: OnlineManager,
+    private val blogSelectedScheduler: BlogSelectedScheduler
 ) {
     private val apiStateFlow = MutableStateFlow<ApiState>(ApiState.Idle)
+
+    suspend fun startScheduler() {
+        blogSelectedScheduler.init()
+    }
 
     suspend fun getBlog(): Flow<DataState<List<Blog>>> {
         return combine(db.getBlogs(), apiStateFlow) { blogs, api ->
@@ -44,4 +51,8 @@ class BlogRepository @Inject constructor(
             apiStateFlow.emit(ApiState.Error(it))
         }
     }
+
+    suspend fun getBlogsSelected(): Flow<List<BlogSelected>> = db.getBlogsSelected()
+
+    suspend fun insertBlogSelected(blogSelected: BlogSelected) = db.insertBlogSelected(blogSelected)
 }

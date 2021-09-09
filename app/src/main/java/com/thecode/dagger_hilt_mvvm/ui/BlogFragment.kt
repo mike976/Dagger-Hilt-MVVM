@@ -15,6 +15,7 @@ import com.thecode.dagger_hilt_mvvm.common.livedata.OneOffEvent
 import com.thecode.dagger_hilt_mvvm.databinding.FragmentBlogBinding
 import com.thecode.dagger_hilt_mvvm.model.Blog
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class BlogFragment : Fragment(), BlogAdapter.BlogItemListener {
@@ -89,6 +90,8 @@ class BlogFragment : Fragment(), BlogAdapter.BlogItemListener {
     }
 
     private fun displayError(message: String?) {
+//        val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+//        val currentDate = sdf.format(Date())
         if (message.isNullOrEmpty().not()) {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show()
         } else {
@@ -107,7 +110,8 @@ class BlogFragment : Fragment(), BlogAdapter.BlogItemListener {
         }
     }
 
-    override fun onClickedBlog(blogTitle: CharSequence) {
+    override fun onClickedBlog(blogTitle: CharSequence, currentList: List<Blog>) {
+        viewModel.onBlogSelected(blogTitle, currentList)
         Toast.makeText(context, blogTitle, Toast.LENGTH_SHORT).show()
     }
 }

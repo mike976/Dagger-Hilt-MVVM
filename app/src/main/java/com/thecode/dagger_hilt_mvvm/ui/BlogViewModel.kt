@@ -8,6 +8,7 @@ import com.thecode.dagger_hilt_mvvm.AppDispatchers
 import com.thecode.dagger_hilt_mvvm.common.DataState
 import com.thecode.dagger_hilt_mvvm.common.livedata.OneOffMutableLiveData
 import com.thecode.dagger_hilt_mvvm.model.Blog
+import com.thecode.dagger_hilt_mvvm.model.BlogSelected
 import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
@@ -27,6 +28,10 @@ class BlogViewModel
     val navigationEvent: OneOffMutableLiveData<NavigationEvent> = OneOffMutableLiveData()
 
     init {
+        viewModelScope.launch(appDispatchers.default) {
+            blogUseCase.startScheduler()
+        }
+
         viewModelScope.launch(appDispatchers.default) {
             blogUseCase.getBlog().collect { dataState ->
                 when (dataState) {
@@ -54,6 +59,21 @@ class BlogViewModel
 
     fun onNavigateToButtonPressed() {
         navigationEvent.postOneOff(NavigationEvent.GotoBlankPage)
+    }
+
+    fun onBlogSelected(blogTitle: CharSequence, currentList: List<Blog>) {
+        viewModelScope.launch(appDispatchers.default) {
+            val selectedBlog = currentList.firstOrNull { it.title == blogTitle }
+            selectedBlog?.let {
+                blogUseCase.insertSelectedBlog(
+                    BlogSelected(
+                        id = it.id,
+                        title = it.title,
+                        date = null
+                    )
+                )
+            }
+        }
     }
 
     sealed class State {

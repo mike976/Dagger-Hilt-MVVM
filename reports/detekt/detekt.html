@@ -72,11 +72,11 @@ pre {
 
 <div>
   <ul>
-    <li>55 number of properties</li>
-    <li>84 number of functions</li>
-    <li>52 number of classes</li>
-    <li>12 number of packages</li>
-    <li>43 number of kt files</li>
+    <li>62 number of properties</li>
+    <li>106 number of functions</li>
+    <li>59 number of classes</li>
+    <li>14 number of packages</li>
+    <li>50 number of kt files</li>
   </ul>
 </div>
 
@@ -85,25 +85,25 @@ pre {
 
 <div>
   <ul>
-    <li>1,382 lines of code (loc)</li>
-    <li>1,056 source lines of code (sloc)</li>
-    <li>613 logical lines of code (lloc)</li>
-    <li>61 comment lines of code (cloc)</li>
-    <li>117 cyclomatic complexity (mcc)</li>
-    <li>24 cognitive complexity</li>
-    <li>79 number of total code smells</li>
+    <li>1,663 lines of code (loc)</li>
+    <li>1,281 source lines of code (sloc)</li>
+    <li>739 logical lines of code (lloc)</li>
+    <li>66 comment lines of code (cloc)</li>
+    <li>144 cyclomatic complexity (mcc)</li>
+    <li>26 cognitive complexity</li>
+    <li>93 number of total code smells</li>
     <li>5% comment source ratio</li>
-    <li>190 mcc per 1,000 lloc</li>
-    <li>128 code smells per 1,000 lloc</li>
+    <li>194 mcc per 1,000 lloc</li>
+    <li>125 code smells per 1,000 lloc</li>
   </ul>
 </div>
 
 
 <h2>Findings</h2>
-<div>Total: 79
-  <h3>formatting: 43</h3>
+<div>Total: 93
+  <h3>formatting: 50</h3>
   <details id="PackageName" open="open">
-    <summary class="rule-container"><span class="rule">PackageName: 43 </span><span class="description">Checks package name is formatted correctly</span></summary>
+    <summary class="rule-container"><span class="rule">PackageName: 50 </span><span class="description">Checks package name is formatted correctly</span></summary>
     <ul>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/androidTest/java/com/thecode/dagger_hilt_mvvm/ExampleInstrumentedTest.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
@@ -130,7 +130,7 @@ pre {
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>import android.app.Application
-<span class="lineno">   4 </span>import dagger.hilt.android.HiltAndroidApp
+<span class="lineno">   4 </span>import androidx.work.Configuration
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/SplashScreen.kt:1:1</span><span class="message">Package name must not contain underscore</span>
@@ -182,6 +182,13 @@ pre {
 <span class="lineno">   4 </span> *  Kotlin Result is unstable, and, at the time of writing, not working for testing
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/db/DateTypeConverter.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.common.db</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.room.TypeConverter
+<span class="lineno">   4 </span>import java.util.Date
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/livedata/OneOffEvent.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.common.livedata</span>
 <span class="lineno">   2 </span>
@@ -231,6 +238,27 @@ pre {
 <span class="lineno">   4 </span>import androidx.room.RoomDatabase
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogSelectedDao.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.room.Dao
+<span class="lineno">   4 </span>import androidx.room.Insert
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogSelectedEntity.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.room.ColumnInfo
+<span class="lineno">   4 </span>import androidx.room.Entity
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogSelectedMapper.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.model.BlogSelected
+<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.util.EntityMapper
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/di/AppModule.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.di</span>
 <span class="lineno">   2 </span>
@@ -264,6 +292,13 @@ pre {
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>data class Blog(
 <span class="lineno">   4 </span>    var id: Long,
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/model/BlogSelected.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.model</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import java.util.Date
+<span class="lineno">   4 </span>
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/network/BlogApi.kt:1:1</span><span class="message">Package name must not contain underscore</span>
@@ -364,6 +399,20 @@ pre {
 <span class="lineno">   4 </span>
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/workmanager/BlogSelectedScheduler.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.workmanager</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import android.content.Context
+<span class="lineno">   4 </span>import androidx.work.Data
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/workmanager/BlogSelectedWorker.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.workmanager</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import android.content.Context
+<span class="lineno">   4 </span>import androidx.hilt.work.HiltWorker
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/ExampleUnitTest.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
 <span class="lineno">   2 </span>
@@ -408,9 +457,9 @@ pre {
       </li>
     </ul>
   </details>
-  <h3>naming: 36</h3>
+  <h3>naming: 43</h3>
   <details id="PackageNaming" open="open">
-    <summary class="rule-container"><span class="rule">PackageNaming: 36 </span><span class="description">Package names should match the naming convention set in the configuration.</span></summary>
+    <summary class="rule-container"><span class="rule">PackageNaming: 43 </span><span class="description">Package names should match the naming convention set in the configuration.</span></summary>
     <ul>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/AppDispatchers.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
@@ -430,7 +479,7 @@ pre {
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>import android.app.Application
-<span class="lineno">   4 </span>import dagger.hilt.android.HiltAndroidApp
+<span class="lineno">   4 </span>import androidx.work.Configuration
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/SplashScreen.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
@@ -482,6 +531,13 @@ pre {
 <span class="lineno">   4 </span> *  Kotlin Result is unstable, and, at the time of writing, not working for testing
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/db/DateTypeConverter.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.common.db</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.room.TypeConverter
+<span class="lineno">   4 </span>import java.util.Date
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/livedata/OneOffEvent.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.common.livedata</span>
 <span class="lineno">   2 </span>
@@ -531,6 +587,27 @@ pre {
 <span class="lineno">   4 </span>import androidx.room.RoomDatabase
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogSelectedDao.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.room.Dao
+<span class="lineno">   4 </span>import androidx.room.Insert
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogSelectedEntity.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.room.ColumnInfo
+<span class="lineno">   4 </span>import androidx.room.Entity
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogSelectedMapper.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.model.BlogSelected
+<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.util.EntityMapper
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/di/AppModule.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.di</span>
 <span class="lineno">   2 </span>
@@ -564,6 +641,13 @@ pre {
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>data class Blog(
 <span class="lineno">   4 </span>    var id: Long,
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/model/BlogSelected.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.model</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import java.util.Date
+<span class="lineno">   4 </span>
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/network/BlogApi.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
@@ -664,12 +748,26 @@ pre {
 <span class="lineno">   4 </span>
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/workmanager/BlogSelectedScheduler.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.workmanager</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import android.content.Context
+<span class="lineno">   4 </span>import androidx.work.Data
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/workmanager/BlogSelectedWorker.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.workmanager</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import android.content.Context
+<span class="lineno">   4 </span>import androidx.hilt.work.HiltWorker
+</code></pre>
+      </li>
     </ul>
   </details>
 </div>
 
 
-generated with <a href="https://arturbosch.github.io/detekt">detekt version 1.15.0</a> on 2021-09-09 10:37:06 UTC.
+generated with <a href="https://arturbosch.github.io/detekt">detekt version 1.15.0</a> on 2021-09-09 16:35:01 UTC.
 
 </body>
 </html>

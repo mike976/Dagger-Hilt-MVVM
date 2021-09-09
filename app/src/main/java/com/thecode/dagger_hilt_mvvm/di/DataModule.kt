@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.thecode.dagger_hilt_mvvm.database.BlogDao
 import com.thecode.dagger_hilt_mvvm.database.BlogDatabase
+import com.thecode.dagger_hilt_mvvm.database.BlogSelectedDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,5 +32,11 @@ object DataModule {
     @Provides
     fun provideBlogDao(blogDatabase: BlogDatabase): BlogDao {
         return blogDatabase.blogDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideBlogSelectedDao(blogDatabase: BlogDatabase): BlogSelectedDao {
+        return blogDatabase.blogSelectedDao()
     }
 }

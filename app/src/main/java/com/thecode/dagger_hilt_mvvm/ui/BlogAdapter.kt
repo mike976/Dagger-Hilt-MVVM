@@ -20,7 +20,7 @@ class BlogAdapter(
     }
 
     interface BlogItemListener {
-        fun onClickedBlog(blogTitle: CharSequence)
+        fun onClickedBlog(blogTitle: CharSequence, currentList: List<Blog>)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BlogViewHolder {
@@ -31,6 +31,6 @@ class BlogAdapter(
     override fun getItemId(position: Int) = getItem(position).id
 
     override fun onBindViewHolder(holder: BlogViewHolder, position: Int) {
-        holder.bind(getItem(position), listener)
+        holder.bind(getItem(position), listener, currentList)
     }
 }

@@ -106,9 +106,16 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     testImplementation "androidx.room:room-testing:$room_version"
 
-    //Navigation Component
+    // Navigation Component
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+
+    // Work manager
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
+    implementation "androidx.hilt:hilt-work:$jetpack_hilt_version"
+    // When using Kotlin.
+    kapt "androidx.hilt:hilt-compiler:$jetpack_hilt_version"
+
 
     // Detekt Plugins
     detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:${detekt_version}"
