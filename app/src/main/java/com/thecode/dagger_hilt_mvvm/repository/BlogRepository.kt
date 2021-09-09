@@ -9,9 +9,11 @@ import com.thecode.dagger_hilt_mvvm.model.Blog
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class BlogRepository
-constructor(
+@Singleton
+class BlogRepository @Inject constructor(
     private val api: BlogRemoteDataSource,
     private val db: BlogLocalDataSource,
     private val onlineManager: OnlineManager
