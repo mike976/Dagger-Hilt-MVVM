@@ -1,11 +1,14 @@
 package com.thecode.dagger_hilt_mvvm.repository
 
-import com.thecode.dagger_hilt_mvvm.common.*
+import com.thecode.dagger_hilt_mvvm.common.ApiState
+import com.thecode.dagger_hilt_mvvm.common.DataState
+import com.thecode.dagger_hilt_mvvm.common.OnlineManager
+import com.thecode.dagger_hilt_mvvm.common.onSuccess
+import com.thecode.dagger_hilt_mvvm.common.onFailure
 import com.thecode.dagger_hilt_mvvm.model.Blog
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
-import kotlin.onFailure
 
 class BlogRepository
 constructor(

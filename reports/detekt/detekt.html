@@ -72,9 +72,9 @@ pre {
 
 <div>
   <ul>
-    <li>48 number of properties</li>
-    <li>79 number of functions</li>
-    <li>51 number of classes</li>
+    <li>55 number of properties</li>
+    <li>84 number of functions</li>
+    <li>52 number of classes</li>
     <li>12 number of packages</li>
     <li>43 number of kt files</li>
   </ul>
@@ -85,294 +85,25 @@ pre {
 
 <div>
   <ul>
-    <li>1,367 lines of code (loc)</li>
-    <li>982 source lines of code (sloc)</li>
-    <li>571 logical lines of code (lloc)</li>
-    <li>143 comment lines of code (cloc)</li>
-    <li>111 cyclomatic complexity (mcc)</li>
+    <li>1,382 lines of code (loc)</li>
+    <li>1,056 source lines of code (sloc)</li>
+    <li>613 logical lines of code (lloc)</li>
+    <li>61 comment lines of code (cloc)</li>
+    <li>117 cyclomatic complexity (mcc)</li>
     <li>24 cognitive complexity</li>
-    <li>105 number of total code smells</li>
-    <li>14% comment source ratio</li>
-    <li>194 mcc per 1,000 lloc</li>
-    <li>183 code smells per 1,000 lloc</li>
+    <li>79 number of total code smells</li>
+    <li>5% comment source ratio</li>
+    <li>190 mcc per 1,000 lloc</li>
+    <li>128 code smells per 1,000 lloc</li>
   </ul>
 </div>
 
 
 <h2>Findings</h2>
-<div>Total: 105
-  <h3>formatting: 69</h3>
-  <details id="CommentSpacing" open="open">
-    <summary class="rule-container"><span class="rule">CommentSpacing: 27 </span><span class="description">Checks if comments have the right spacing</span></summary>
-    <ul>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:1:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   1 </span><span class="error">//package com.thecode.dagger_hilt_mvvm.viewmodel</span>
-<span class="lineno">   2 </span>//
-<span class="lineno">   3 </span>//import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-<span class="lineno">   4 </span>//import com.thecode.dagger_hilt_mvvm.TestAppDispatchers
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:3:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   1 </span>//package com.thecode.dagger_hilt_mvvm.viewmodel
-<span class="lineno">   2 </span>//
-<span class="lineno">   3 </span><span class="error">//import androidx.arch.core.executor.testing.InstantTaskExecutorRule</span>
-<span class="lineno">   4 </span>//import com.thecode.dagger_hilt_mvvm.TestAppDispatchers
-<span class="lineno">   5 </span>//import com.thecode.dagger_hilt_mvvm.emptyBlogModel
-<span class="lineno">   6 </span>//import com.thecode.dagger_hilt_mvvm.model.Blog
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:4:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   1 </span>//package com.thecode.dagger_hilt_mvvm.viewmodel
-<span class="lineno">   2 </span>//
-<span class="lineno">   3 </span>//import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-<span class="lineno">   4 </span><span class="error">//import com.thecode.dagger_hilt_mvvm.TestAppDispatchers</span>
-<span class="lineno">   5 </span>//import com.thecode.dagger_hilt_mvvm.emptyBlogModel
-<span class="lineno">   6 </span>//import com.thecode.dagger_hilt_mvvm.model.Blog
-<span class="lineno">   7 </span>//import com.thecode.dagger_hilt_mvvm.ui.State
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:5:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   2 </span>//
-<span class="lineno">   3 </span>//import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-<span class="lineno">   4 </span>//import com.thecode.dagger_hilt_mvvm.TestAppDispatchers
-<span class="lineno">   5 </span><span class="error">//import com.thecode.dagger_hilt_mvvm.emptyBlogModel</span>
-<span class="lineno">   6 </span>//import com.thecode.dagger_hilt_mvvm.model.Blog
-<span class="lineno">   7 </span>//import com.thecode.dagger_hilt_mvvm.ui.State
-<span class="lineno">   8 </span>//import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:6:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   3 </span>//import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-<span class="lineno">   4 </span>//import com.thecode.dagger_hilt_mvvm.TestAppDispatchers
-<span class="lineno">   5 </span>//import com.thecode.dagger_hilt_mvvm.emptyBlogModel
-<span class="lineno">   6 </span><span class="error">//import com.thecode.dagger_hilt_mvvm.model.Blog</span>
-<span class="lineno">   7 </span>//import com.thecode.dagger_hilt_mvvm.ui.State
-<span class="lineno">   8 </span>//import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel
-<span class="lineno">   9 </span>//import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:7:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   4 </span>//import com.thecode.dagger_hilt_mvvm.TestAppDispatchers
-<span class="lineno">   5 </span>//import com.thecode.dagger_hilt_mvvm.emptyBlogModel
-<span class="lineno">   6 </span>//import com.thecode.dagger_hilt_mvvm.model.Blog
-<span class="lineno">   7 </span><span class="error">//import com.thecode.dagger_hilt_mvvm.ui.State</span>
-<span class="lineno">   8 </span>//import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel
-<span class="lineno">   9 </span>//import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
-<span class="lineno">  10 </span>//import com.thecode.dagger_hilt_mvvm.util.DataState
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:8:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   5 </span>//import com.thecode.dagger_hilt_mvvm.emptyBlogModel
-<span class="lineno">   6 </span>//import com.thecode.dagger_hilt_mvvm.model.Blog
-<span class="lineno">   7 </span>//import com.thecode.dagger_hilt_mvvm.ui.State
-<span class="lineno">   8 </span><span class="error">//import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel</span>
-<span class="lineno">   9 </span>//import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
-<span class="lineno">  10 </span>//import com.thecode.dagger_hilt_mvvm.util.DataState
-<span class="lineno">  11 </span>//import io.mockk.MockKAnnotations
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:9:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   6 </span>//import com.thecode.dagger_hilt_mvvm.model.Blog
-<span class="lineno">   7 </span>//import com.thecode.dagger_hilt_mvvm.ui.State
-<span class="lineno">   8 </span>//import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel
-<span class="lineno">   9 </span><span class="error">//import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase</span>
-<span class="lineno">  10 </span>//import com.thecode.dagger_hilt_mvvm.util.DataState
-<span class="lineno">  11 </span>//import io.mockk.MockKAnnotations
-<span class="lineno">  12 </span>//import io.mockk.coEvery
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:10:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   7 </span>//import com.thecode.dagger_hilt_mvvm.ui.State
-<span class="lineno">   8 </span>//import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel
-<span class="lineno">   9 </span>//import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
-<span class="lineno">  10 </span><span class="error">//import com.thecode.dagger_hilt_mvvm.util.DataState</span>
-<span class="lineno">  11 </span>//import io.mockk.MockKAnnotations
-<span class="lineno">  12 </span>//import io.mockk.coEvery
-<span class="lineno">  13 </span>//import io.mockk.coVerify
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:11:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   8 </span>//import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel
-<span class="lineno">   9 </span>//import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
-<span class="lineno">  10 </span>//import com.thecode.dagger_hilt_mvvm.util.DataState
-<span class="lineno">  11 </span><span class="error">//import io.mockk.MockKAnnotations</span>
-<span class="lineno">  12 </span>//import io.mockk.coEvery
-<span class="lineno">  13 </span>//import io.mockk.coVerify
-<span class="lineno">  14 </span>//import io.mockk.impl.annotations.MockK
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:12:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">   9 </span>//import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
-<span class="lineno">  10 </span>//import com.thecode.dagger_hilt_mvvm.util.DataState
-<span class="lineno">  11 </span>//import io.mockk.MockKAnnotations
-<span class="lineno">  12 </span><span class="error">//import io.mockk.coEvery</span>
-<span class="lineno">  13 </span>//import io.mockk.coVerify
-<span class="lineno">  14 </span>//import io.mockk.impl.annotations.MockK
-<span class="lineno">  15 </span>//import junit.framework.Assert
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:13:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  10 </span>//import com.thecode.dagger_hilt_mvvm.util.DataState
-<span class="lineno">  11 </span>//import io.mockk.MockKAnnotations
-<span class="lineno">  12 </span>//import io.mockk.coEvery
-<span class="lineno">  13 </span><span class="error">//import io.mockk.coVerify</span>
-<span class="lineno">  14 </span>//import io.mockk.impl.annotations.MockK
-<span class="lineno">  15 </span>//import junit.framework.Assert
-<span class="lineno">  16 </span>//import kotlinx.coroutines.Dispatchers
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:14:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  11 </span>//import io.mockk.MockKAnnotations
-<span class="lineno">  12 </span>//import io.mockk.coEvery
-<span class="lineno">  13 </span>//import io.mockk.coVerify
-<span class="lineno">  14 </span><span class="error">//import io.mockk.impl.annotations.MockK</span>
-<span class="lineno">  15 </span>//import junit.framework.Assert
-<span class="lineno">  16 </span>//import kotlinx.coroutines.Dispatchers
-<span class="lineno">  17 </span>//import kotlinx.coroutines.flow.MutableStateFlow
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:15:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  12 </span>//import io.mockk.coEvery
-<span class="lineno">  13 </span>//import io.mockk.coVerify
-<span class="lineno">  14 </span>//import io.mockk.impl.annotations.MockK
-<span class="lineno">  15 </span><span class="error">//import junit.framework.Assert</span>
-<span class="lineno">  16 </span>//import kotlinx.coroutines.Dispatchers
-<span class="lineno">  17 </span>//import kotlinx.coroutines.flow.MutableStateFlow
-<span class="lineno">  18 </span>//import kotlinx.coroutines.test.resetMain
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:16:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  13 </span>//import io.mockk.coVerify
-<span class="lineno">  14 </span>//import io.mockk.impl.annotations.MockK
-<span class="lineno">  15 </span>//import junit.framework.Assert
-<span class="lineno">  16 </span><span class="error">//import kotlinx.coroutines.Dispatchers</span>
-<span class="lineno">  17 </span>//import kotlinx.coroutines.flow.MutableStateFlow
-<span class="lineno">  18 </span>//import kotlinx.coroutines.test.resetMain
-<span class="lineno">  19 </span>//import kotlinx.coroutines.test.runBlockingTest
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:17:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  14 </span>//import io.mockk.impl.annotations.MockK
-<span class="lineno">  15 </span>//import junit.framework.Assert
-<span class="lineno">  16 </span>//import kotlinx.coroutines.Dispatchers
-<span class="lineno">  17 </span><span class="error">//import kotlinx.coroutines.flow.MutableStateFlow</span>
-<span class="lineno">  18 </span>//import kotlinx.coroutines.test.resetMain
-<span class="lineno">  19 </span>//import kotlinx.coroutines.test.runBlockingTest
-<span class="lineno">  20 </span>//import kotlinx.coroutines.test.setMain
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:18:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  15 </span>//import junit.framework.Assert
-<span class="lineno">  16 </span>//import kotlinx.coroutines.Dispatchers
-<span class="lineno">  17 </span>//import kotlinx.coroutines.flow.MutableStateFlow
-<span class="lineno">  18 </span><span class="error">//import kotlinx.coroutines.test.resetMain</span>
-<span class="lineno">  19 </span>//import kotlinx.coroutines.test.runBlockingTest
-<span class="lineno">  20 </span>//import kotlinx.coroutines.test.setMain
-<span class="lineno">  21 </span>//import org.junit.After
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:19:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  16 </span>//import kotlinx.coroutines.Dispatchers
-<span class="lineno">  17 </span>//import kotlinx.coroutines.flow.MutableStateFlow
-<span class="lineno">  18 </span>//import kotlinx.coroutines.test.resetMain
-<span class="lineno">  19 </span><span class="error">//import kotlinx.coroutines.test.runBlockingTest</span>
-<span class="lineno">  20 </span>//import kotlinx.coroutines.test.setMain
-<span class="lineno">  21 </span>//import org.junit.After
-<span class="lineno">  22 </span>//import org.junit.Before
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:20:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  17 </span>//import kotlinx.coroutines.flow.MutableStateFlow
-<span class="lineno">  18 </span>//import kotlinx.coroutines.test.resetMain
-<span class="lineno">  19 </span>//import kotlinx.coroutines.test.runBlockingTest
-<span class="lineno">  20 </span><span class="error">//import kotlinx.coroutines.test.setMain</span>
-<span class="lineno">  21 </span>//import org.junit.After
-<span class="lineno">  22 </span>//import org.junit.Before
-<span class="lineno">  23 </span>//import org.junit.Rule
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:21:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  18 </span>//import kotlinx.coroutines.test.resetMain
-<span class="lineno">  19 </span>//import kotlinx.coroutines.test.runBlockingTest
-<span class="lineno">  20 </span>//import kotlinx.coroutines.test.setMain
-<span class="lineno">  21 </span><span class="error">//import org.junit.After</span>
-<span class="lineno">  22 </span>//import org.junit.Before
-<span class="lineno">  23 </span>//import org.junit.Rule
-<span class="lineno">  24 </span>//import org.junit.Test
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:22:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  19 </span>//import kotlinx.coroutines.test.runBlockingTest
-<span class="lineno">  20 </span>//import kotlinx.coroutines.test.setMain
-<span class="lineno">  21 </span>//import org.junit.After
-<span class="lineno">  22 </span><span class="error">//import org.junit.Before</span>
-<span class="lineno">  23 </span>//import org.junit.Rule
-<span class="lineno">  24 </span>//import org.junit.Test
-<span class="lineno">  25 </span>//
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:23:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  20 </span>//import kotlinx.coroutines.test.setMain
-<span class="lineno">  21 </span>//import org.junit.After
-<span class="lineno">  22 </span>//import org.junit.Before
-<span class="lineno">  23 </span><span class="error">//import org.junit.Rule</span>
-<span class="lineno">  24 </span>//import org.junit.Test
-<span class="lineno">  25 </span>//
-<span class="lineno">  26 </span>//class BlogViewModelTest {
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:24:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  21 </span>//import org.junit.After
-<span class="lineno">  22 </span>//import org.junit.Before
-<span class="lineno">  23 </span>//import org.junit.Rule
-<span class="lineno">  24 </span><span class="error">//import org.junit.Test</span>
-<span class="lineno">  25 </span>//
-<span class="lineno">  26 </span>//class BlogViewModelTest {
-<span class="lineno">  27 </span>//
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:26:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  23 </span>//import org.junit.Rule
-<span class="lineno">  24 </span>//import org.junit.Test
-<span class="lineno">  25 </span>//
-<span class="lineno">  26 </span><span class="error">//class BlogViewModelTest {</span>
-<span class="lineno">  27 </span>//
-<span class="lineno">  28 </span>////    @get:Rule
-<span class="lineno">  29 </span>////    var mainCoroutineRule = MainCoroutineRule()
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:28:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  25 </span>//
-<span class="lineno">  26 </span>//class BlogViewModelTest {
-<span class="lineno">  27 </span>//
-<span class="lineno">  28 </span><span class="error">////    @get:Rule</span>
-<span class="lineno">  29 </span>////    var mainCoroutineRule = MainCoroutineRule()
-<span class="lineno">  30 </span>//
-<span class="lineno">  31 </span>//    private val appDispatchers = TestAppDispatchers()
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:29:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  26 </span>//class BlogViewModelTest {
-<span class="lineno">  27 </span>//
-<span class="lineno">  28 </span>////    @get:Rule
-<span class="lineno">  29 </span><span class="error">////    var mainCoroutineRule = MainCoroutineRule()</span>
-<span class="lineno">  30 </span>//
-<span class="lineno">  31 </span>//    private val appDispatchers = TestAppDispatchers()
-<span class="lineno">  32 </span>//
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:92:1</span><span class="message">Missing space after //</span>
-        <pre><code><span class="lineno">  89 </span>//        // Then
-<span class="lineno">  90 </span>//        Assert.assertEquals(DataState.Success(blogs), classUnderTest.viewModelState.value)
-<span class="lineno">  91 </span>//    }
-<span class="lineno">  92 </span><span class="error">//}</span>
-<span class="lineno">  93 </span>
-</code></pre>
-      </li>
-    </ul>
-  </details>
+<div>Total: 79
+  <h3>formatting: 43</h3>
   <details id="PackageName" open="open">
-    <summary class="rule-container"><span class="rule">PackageName: 42 </span><span class="description">Checks package name is formatted correctly</span></summary>
+    <summary class="rule-container"><span class="rule">PackageName: 43 </span><span class="description">Checks package name is formatted correctly</span></summary>
     <ul>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/androidTest/java/com/thecode/dagger_hilt_mvvm/ExampleInstrumentedTest.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
@@ -479,6 +210,13 @@ pre {
 <span class="lineno">   4 </span>import androidx.room.Entity
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogCacheMapper.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.model.Blog
+<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.util.EntityMapper
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogDao.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
 <span class="lineno">   2 </span>
@@ -491,13 +229,6 @@ pre {
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>import androidx.room.Database
 <span class="lineno">   4 </span>import androidx.room.RoomDatabase
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/CacheMapper.kt:1:1</span><span class="message">Package name must not contain underscore</span>
-        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.model.Blog
-<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.util.EntityMapper
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/di/AppModule.kt:1:1</span><span class="message">Package name must not contain underscore</span>
@@ -560,7 +291,7 @@ pre {
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.repository</span>
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.database.BlogDao
-<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.database.CacheMapper
+<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.database.BlogCacheMapper
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/repository/BlogRemoteDataSource.kt:1:1</span><span class="message">Package name must not contain underscore</span>
@@ -668,6 +399,13 @@ pre {
 <span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.common.DataState
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.viewmodel</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.TestAppDispatchers
+</code></pre>
+      </li>
     </ul>
   </details>
   <h3>naming: 36</h3>
@@ -772,6 +510,13 @@ pre {
 <span class="lineno">   4 </span>import androidx.room.Entity
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogCacheMapper.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.model.Blog
+<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.util.EntityMapper
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/BlogDao.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
 <span class="lineno">   2 </span>
@@ -784,13 +529,6 @@ pre {
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>import androidx.room.Database
 <span class="lineno">   4 </span>import androidx.room.RoomDatabase
-</code></pre>
-      </li>
-      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/database/CacheMapper.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
-        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.database</span>
-<span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.model.Blog
-<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.util.EntityMapper
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/di/AppModule.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
@@ -853,7 +591,7 @@ pre {
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.repository</span>
 <span class="lineno">   2 </span>
 <span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.database.BlogDao
-<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.database.CacheMapper
+<span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.database.BlogCacheMapper
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/repository/BlogRemoteDataSource.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
@@ -931,7 +669,7 @@ pre {
 </div>
 
 
-generated with <a href="https://arturbosch.github.io/detekt">detekt version 1.15.0</a> on 2021-09-09 10:07:23 UTC.
+generated with <a href="https://arturbosch.github.io/detekt">detekt version 1.15.0</a> on 2021-09-09 10:37:06 UTC.
 
 </body>
 </html>
