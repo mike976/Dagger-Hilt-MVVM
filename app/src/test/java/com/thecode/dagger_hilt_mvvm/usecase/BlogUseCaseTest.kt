@@ -1,10 +1,10 @@
 package com.thecode.dagger_hilt_mvvm.usecase
 
 import com.thecode.dagger_hilt_mvvm.MainCoroutineRule
+import com.thecode.dagger_hilt_mvvm.common.DataState
 import com.thecode.dagger_hilt_mvvm.emptyBlogModel
 import com.thecode.dagger_hilt_mvvm.model.Blog
 import com.thecode.dagger_hilt_mvvm.repository.BlogRepository
-import com.thecode.dagger_hilt_mvvm.util.DataState
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
@@ -29,7 +29,7 @@ class BlogUseCaseTest {
     lateinit var blogRepository: BlogRepository
 
     private val blogsFlow = MutableStateFlow<DataState<List<Blog>>>(
-        DataState.Success(listOf(
+        DataState.CompleteWithContent(listOf(
         emptyBlogModel()
     )))
 

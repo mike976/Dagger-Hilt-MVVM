@@ -1,36 +1,42 @@
 package com.thecode.dagger_hilt_mvvm.repository
 
-import com.thecode.dagger_hilt_mvvm.database.BlogDao
-import com.thecode.dagger_hilt_mvvm.database.CacheMapper
+import com.thecode.dagger_hilt_mvvm.common.*
 import com.thecode.dagger_hilt_mvvm.model.Blog
-import com.thecode.dagger_hilt_mvvm.network.BlogApi
-import com.thecode.dagger_hilt_mvvm.network.BlogMapper
-import com.thecode.dagger_hilt_mvvm.util.DataState
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlin.onFailure
 
 class BlogRepository
 constructor(
-    private val blogDao: BlogDao,
-    private val blogApi: BlogApi,
-    private val cacheMapper: CacheMapper,
-    private val blogMapper: BlogMapper
+    private val api: BlogRemoteDataSource,
+    private val db: BlogLocalDataSource,
+    private val onlineManager: OnlineManager
 ) {
-    @Suppress("MagicNumber", "TooGenericExceptionCaught")
-    suspend fun getBlog(): Flow<DataState<List<Blog>>> = flow {
-        emit(DataState.Loading)
-        delay(1000)
-        try {
-            val networkBlogs = blogApi.get()
-            val blogs = blogMapper.mapFromEntityList(networkBlogs)
-            for (blog in blogs) {
-                blogDao.insert(cacheMapper.mapToEntity(blog))
+    private val apiStateFlow = MutableStateFlow<ApiState>(ApiState.Idle)
+
+    suspend fun getBlog(): Flow<DataState<List<Blog>>> {
+        return combine(db.getBlogs(), apiStateFlow) { blogs, api ->
+            when (api) {
+                ApiState.Loading ->
+                    DataState.Loading
+                is ApiState.Error ->
+                    DataState.ErrorWithContent(blogs, api.error)
+                ApiState.Idle ->
+                    DataState.CompleteWithContent(blogs)
             }
-            val cachedBlogs = blogDao.get()
-            emit(DataState.Success(cacheMapper.mapFromEntityList(cachedBlogs)))
-        } catch (e: Exception) {
-            emit(DataState.Error(e))
+        }
+    }
+
+    suspend fun refreshBlogs() {
+        onlineManager.performApiCallIfConnected {
+            apiStateFlow.emit(ApiState.Loading)
+            api.getBlogs()
+        }.onSuccess {
+            db.insertBlogs(it)
+            apiStateFlow.emit(ApiState.Idle)
+        }.onFailure {
+            apiStateFlow.emit(ApiState.Error(it))
         }
     }
 }

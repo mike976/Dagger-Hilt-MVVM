@@ -3,19 +3,48 @@
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/androidTest/java/com/thecode/dagger_hilt_mvvm/ExampleInstrumentedTest.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 </file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/viewmodel/BlogViewModelTest.kt">
+	<error line="1" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="3" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="4" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="5" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="6" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="7" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="8" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="9" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="10" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="11" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="12" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="13" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="14" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="15" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="16" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="17" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="18" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="19" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="20" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="21" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="22" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="23" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="24" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="26" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="28" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="29" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+	<error line="92" column="1" severity="warning" message="Missing space after //" source="detekt.CommentSpacing" />
+</file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/MainCoroutineRule.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 </file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/ExampleUnitTest.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 </file>
-<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/BlogViewModelTest.kt">
-	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
-</file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/TestFactory.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 </file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/TestAppDispatchers.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/test/java/com/thecode/dagger_hilt_mvvm/usecase/BlogUseCaseTest.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 </file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/MainActivity.kt">
@@ -58,7 +87,15 @@
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>
-<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/repository/MainRepository.kt">
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/repository/BlogRepository.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/repository/BlogLocalDataSource.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/repository/BlogRemoteDataSource.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>
@@ -90,10 +127,6 @@
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>
-<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/util/DataState.kt">
-	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
-	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
-</file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/network/BlogApi.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
@@ -106,6 +139,42 @@
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/ApiState.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/Result.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/NetworkException.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/ExceptionExtensions.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/livedata/OneOffMutableLiveData.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/livedata/OneOffLiveData.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/livedata/OneOffEvent.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/DataState.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/common/OnlineManager.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/AppSharedPreferences.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
@@ -115,6 +184,10 @@
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/SplashScreen.kt">
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+</file>
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/usecase/BlogUseCase.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>

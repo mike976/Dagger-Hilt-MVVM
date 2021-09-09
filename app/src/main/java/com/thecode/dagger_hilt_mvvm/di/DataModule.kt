@@ -22,13 +22,14 @@ object DataModule {
             context, BlogDatabase::class.java,
             BlogDatabase.DATABASE_NAME
         )
+            .fallbackToDestructiveMigrationOnDowngrade()
             .fallbackToDestructiveMigration()
             .build()
     }
 
     @Singleton
     @Provides
-    fun provideBlogDAO(blogDatabase: BlogDatabase): BlogDao {
+    fun provideBlogDao(blogDatabase: BlogDatabase): BlogDao {
         return blogDatabase.blogDao()
     }
 }

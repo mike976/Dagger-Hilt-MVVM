@@ -3,7 +3,11 @@ package com.thecode.dagger_hilt_mvvm.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
-@Database(entities = [BlogCacheEntity::class], version = 1)
+@Database(
+    entities = [
+        BlogCacheEntity::class
+    ], version = 2
+)
 abstract class BlogDatabase : RoomDatabase() {
     abstract fun blogDao(): BlogDao
 

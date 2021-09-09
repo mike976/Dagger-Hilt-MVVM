@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.thecode.dagger_hilt_mvvm.R
+import com.thecode.dagger_hilt_mvvm.common.livedata.OneOffEvent
 import com.thecode.dagger_hilt_mvvm.databinding.FragmentBlogBinding
 import com.thecode.dagger_hilt_mvvm.model.Blog
-import com.thecode.dagger_hilt_mvvm.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,15 +39,19 @@ class BlogFragment : Fragment(), BlogAdapter.BlogItemListener {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
-        subscribeObservers()
-        viewModel.setStateEvent(MainStateEvent.GetBlogEvents)
+
+        with(viewModel) {
+            viewModelState.observe(viewLifecycleOwner, ::onViewStateChanged)
+            navigationEvent.observe(viewLifecycleOwner, ::onNavigationEventChanged)
+            refreshBlogs()
+        }
 
         binding.swipeRefreshLayout.setOnRefreshListener {
-            viewModel.setStateEvent(MainStateEvent.GetBlogEvents)
+            viewModel.refreshBlogs()
         }
 
         binding.navigateToButton.setOnClickListener {
-            findNavController().navigate(R.id.action_blogFragment_to_blankFragment)
+            viewModel.onNavigateToButtonPressed()
         }
     }
 
@@ -57,26 +60,36 @@ class BlogFragment : Fragment(), BlogAdapter.BlogItemListener {
         binding.blogRecyclerview.adapter = adapter
     }
 
-    private fun subscribeObservers() {
-        viewModel.dataState.observe(viewLifecycleOwner, Observer { dataState ->
-            when (dataState) {
-                is DataState.Success<List<Blog>> -> {
-                    displayLoading(false)
-                    populateRecyclerView(dataState.data)
-                }
-                is DataState.Loading -> {
-                    displayLoading(true)
-                }
-                is DataState.Error -> {
-                    displayLoading(false)
-                    displayError(dataState.exception.message)
+    private fun onNavigationEventChanged(navigationEvent: OneOffEvent<BlogViewModel.NavigationEvent>) {
+        navigationEvent.runOnce {
+            when (it) {
+                is BlogViewModel.NavigationEvent.GotoBlankPage -> {
+                    findNavController().navigate(R.id.action_blogFragment_to_blankFragment)
                 }
             }
-        })
+        }
+    }
+
+    private fun onViewStateChanged(viewState: BlogViewModel.State) {
+
+        when (viewState) {
+            is BlogViewModel.State.LoadingBlogs -> {
+                displayLoading(true)
+            }
+            is BlogViewModel.State.ReceivedBlogsOffline -> {
+                displayLoading(false)
+                populateRecyclerView(viewState.blogs)
+                displayError(viewState.errorMsg)
+            }
+            is BlogViewModel.State.ReceivedBlogs -> {
+                displayLoading(false)
+                populateRecyclerView(viewState.blogs)
+            }
+        }
     }
 
     private fun displayError(message: String?) {
-        if (message.isNullOrEmpty()) {
+        if (message.isNullOrEmpty().not()) {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show()
         } else {
             Toast.makeText(context, "Unknown error", Toast.LENGTH_LONG).show()
