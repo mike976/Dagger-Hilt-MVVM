@@ -1,8 +1,8 @@
 TODO
 
-1. Implement a work manager
-2. update DialogFragment to use a android compose view to display a simple list without the need of recyclerview+viewholder, which is a benefit of android compose
-3. cleanup all detekt errors - just packagename errors to resolve
+1. update DialogFragment to use a android compose view to display a simple list without the need of recyclerview+viewholder, which is a benefit of android compose
+- Will mean creating new feature branch that updates the project to run in Android Studio Preview
+2. cleanup all detekt errors - just packagename errors to resolve
 
 To run ./gradlew for new projects:
 

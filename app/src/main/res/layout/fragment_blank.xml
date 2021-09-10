@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/blankTitle"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/loadSelectedBlogsButton"
         android:layout_marginTop="@dimen/MarginXSmall"
         style="@style/Text.Body1"
         android:textColor="@color/onSurfaceLight"
@@ -63,5 +63,18 @@
         android:layout_marginHorizontal="@dimen/MarginXLarge"
         android:text="@string/blank_subtitle"
         android:gravity="center"/>
+
+    <Button
+        android:id="@+id/loadSelectedBlogsButton"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/MarginXXXLarge"
+        android:layout_marginVertical="@dimen/MarginXLarge"
+        android:text="@string/load_selected_blogs"
+        app:layout_constraintTop_toBottomOf="@id/blankSubtitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

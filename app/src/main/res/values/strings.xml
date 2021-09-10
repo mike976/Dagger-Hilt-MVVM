@@ -6,4 +6,7 @@
     <string name="blank_subtitle">This is a subtitle</string>
     <string name="blank_title">This is the title</string>
     <string name="navigate_back_button_title">Navigate back via Nav Graph</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="load_selected_blogs">Load Selected Blogs</string>
 </resources>
