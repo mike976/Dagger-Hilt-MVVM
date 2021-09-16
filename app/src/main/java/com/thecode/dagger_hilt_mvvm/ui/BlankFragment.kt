@@ -40,6 +40,12 @@ class BlankFragment : Fragment() {
             findNavController().navigate(R.id.action_blankFragment_to_blogFragment)
         }
 
+        binding.loadSelectedBlogsButton.setOnClickListener {
+            val fragmentManager = activity?.supportFragmentManager
+            val dialogFragment = SelectedBlogsFragment.newInstance()
+            fragmentManager?.let { dialogFragment.show(it, SelectedBlogsFragment.TAG) }
+        }
+
         // Use of a ViewFlipper: useful to rebuild screen based on diff states.
 
         // Below Simulates some work e.g retreiving data from local db or remote db

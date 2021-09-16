@@ -4,12 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.DialogFragment
 import com.thecode.dagger_hilt_mvvm.databinding.FragmentSelectedBlogsBinding
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.compose.material.Text
 
 @AndroidEntryPoint
 class SelectedBlogsFragment : DialogFragment() {
+
+    companion object {
+
+        const val TAG = "SELECTED_BLOGS_DIALOG"
+
+        fun newInstance() = SelectedBlogsFragment()
+    }
 
     private lateinit var binding: FragmentSelectedBlogsBinding
 
@@ -18,11 +27,14 @@ class SelectedBlogsFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return FragmentSelectedBlogsBinding.inflate(layoutInflater,
-            container, false).let {
-            binding = it
-            it.root
+        // TODO Using Jetpack compose display list of selected blogs
+        val view = ComposeView(requireContext())
+        view.apply {
+            setContent {
+                Text("Displaying text using Jetpack compose")
+            }
         }
+        return view
     }
 
     // TODO

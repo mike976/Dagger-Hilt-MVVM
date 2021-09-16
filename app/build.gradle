@@ -6,13 +6,13 @@ apply plugin: 'io.gitlab.arturbosch.detekt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.1"
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.thecode.dagger_hilt_mvvm"
         minSdkVersion 23
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -40,13 +40,20 @@ android {
     }
 
     buildFeatures.viewBinding = true
+
+    // Jetpack Compose
+    buildFeatures.compose = true
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerVersion kotlin_version
+    }
+    kotlinOptions.useIR = true
 }
 
 dependencies {
-
+    def okhttpVersion = "4.9.1"
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    def okhttpVersion = "4.9.1"
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -62,21 +69,22 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     // Hilt ViewModel extension
-    def hilt_jetpack_version = "1.0.0-alpha02"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_jetpack_version"
-    kapt "androidx.hilt:hilt-compiler:$hilt_jetpack_version"
     implementation 'androidx.fragment:fragment-ktx:1.3.0-alpha07'
+
+    implementation "androidx.hilt:hilt-work:$jetpack_hilt_version"
+    // When using Kotlin.
+    kapt "androidx.hilt:hilt-compiler:$jetpack_hilt_version"
 
     // Hilt testing dependencies
     androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
-    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
-    kaptAndroidTest "androidx.hilt:hilt-compiler:$hilt_jetpack_version"
+    kaptTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     //Lifecycle
     def lifecycle_version = "2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.1.1"
+
 
     //Kotlin Coroutines
     def coroutines_android_version = '1.4.2'
@@ -137,6 +145,26 @@ dependencies {
     debugImplementation "androidx.fragment:fragment-testing:1.2.5"
     // implementation("androidx.security:security-crypto:1.0.0")
 
+    // Jetpack Compose
+    implementation "androidx.compose.animation:animation-core:$compose_version"
+    implementation "androidx.compose.animation:animation:$compose_version"
+    implementation("androidx.compose.ui:ui:$compose_version")
+    implementation "androidx.compose.foundation:foundation:$compose_version"
+    implementation "androidx.compose.ui:ui-geometry:$compose_version"
+    implementation "androidx.compose.ui:ui-graphics:$compose_version"
+    implementation "androidx.compose.foundation:foundation-layout:$compose_version"
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.material:material-icons-core:$compose_version"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+    implementation "androidx.compose.runtime:runtime-rxjava2:$compose_version"
+    implementation("androidx.compose.ui:ui-text:$compose_version")
+    implementation("androidx.compose.ui:ui-util:$compose_version")
+    implementation ("androidx.compose.ui:ui-viewbinding:$compose_version")
+    implementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation "androidx.activity:activity-compose:1.3.0-rc01"
+    implementation "androidx.compose.runtime:runtime:$compose_version"
+
 }
 
 detekt {
@@ -158,4 +186,19 @@ detekt {
             destination = file("$rootDir/reports/detekt/detekt.txt")
         }
     }
+}
+
+kapt {
+    correctErrorTypes true
+
+    javacOptions {
+        // These options are normally set automatically via the Hilt Gradle plugin, but we
+        // set them manually to workaround a bug in the Kotlin 1.5.20
+        option("-Adagger.fastInit=ENABLED")
+        option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+    }
+}
+
+hilt {
+    enableTransformForLocalTests = true
 }
