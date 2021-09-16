@@ -13,4 +13,7 @@
     <color name="onSurface">@color/black</color>
     <color name="onSurfaceLight">@color/grey_1</color>
 
+    <color name="primary">@color/blue</color>
+    <color name="surface">@color/white</color>
+
 </resources>

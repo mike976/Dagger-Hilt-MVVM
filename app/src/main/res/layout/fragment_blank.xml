@@ -6,75 +6,110 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.BlankFragment">
 
-    <Button
-        android:id="@+id/navigateBackButton"
-        android:layout_height="wrap_content"
+    <ViewFlipper
+        android:id="@+id/blankViewFlipper"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="@dimen/MarginXXXLarge"
-        android:text="@string/navigate_back_button_title"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/blankImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_chainStyle="packed">
-    </Button>
-
-    <ImageView
-        android:id="@+id/blankImage"
-        android:layout_width="@dimen/MarginXXXLarge"
-        android:layout_height="@dimen/MarginXXXLarge"
-        app:layout_constraintTop_toBottomOf="@id/navigateBackButton"
-        app:layout_constraintBottom_toTopOf="@id/blankTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="9dp"
-        android:src="@drawable/ic_baseline_play_circle_outline_24"
-        android:importantForAccessibility="no"
-        />
-
-    <TextView
-        android:id="@+id/blankTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/blankImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/blankSubtitle"
-        style="@style/Text.Headline3"
-        android:textColor="@color/onSurfaceLight"
-        android:textIsSelectable="false"
-        android:text="@string/blank_title"
-        android:layout_marginHorizontal="@dimen/MarginXLarge"
-        android:gravity="center"/>
-
-    <TextView
-        android:id="@+id/blankSubtitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/blankTitle"
-        app:layout_constraintBottom_toTopOf="@id/loadSelectedBlogsButton"
-        android:layout_marginTop="@dimen/MarginXSmall"
-        style="@style/Text.Body1"
-        android:textColor="@color/onSurfaceLight"
-        android:textIsSelectable="false"
-        android:layout_marginHorizontal="@dimen/MarginXLarge"
-        android:text="@string/blank_subtitle"
-        android:gravity="center"/>
-
-    <Button
-        android:id="@+id/loadSelectedBlogsButton"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginHorizontal="@dimen/MarginXXXLarge"
-        android:layout_marginVertical="@dimen/MarginXLarge"
-        android:text="@string/load_selected_blogs"
-        app:layout_constraintTop_toBottomOf="@id/blankSubtitle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-    </Button>
+        android:inAnimation="@anim/fade_in"
+        android:outAnimation="@anim/fade_out">
+
+        <!-- LOADING -->
+        <ProgressBar
+            android:id="@+id/loadingProgressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:indeterminateTint="@color/primary"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loadedPageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <Button
+                android:id="@+id/navigateBackButton"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/MarginXXXLarge"
+                android:text="@string/navigate_back_button_title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/blankImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_chainStyle="packed">
+            </Button>
+
+            <ImageView
+                android:id="@+id/blankImage"
+                android:layout_width="@dimen/MarginXXXLarge"
+                android:layout_height="@dimen/MarginXXXLarge"
+                app:layout_constraintTop_toBottomOf="@id/navigateBackButton"
+                app:layout_constraintBottom_toTopOf="@id/blankTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="9dp"
+                android:src="@drawable/ic_baseline_play_circle_outline_24"
+                android:importantForAccessibility="no"
+                />
+
+            <TextView
+                android:id="@+id/blankTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/blankImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/blankSubtitle"
+                style="@style/Text.Headline3"
+                android:textColor="@color/onSurfaceLight"
+                android:textIsSelectable="false"
+                android:text="@string/blank_title"
+                android:layout_marginHorizontal="@dimen/MarginXLarge"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/blankSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/blankTitle"
+                app:layout_constraintBottom_toTopOf="@id/loadSelectedBlogsButton"
+                android:layout_marginTop="@dimen/MarginXSmall"
+                style="@style/Text.Body1"
+                android:textColor="@color/onSurfaceLight"
+                android:textIsSelectable="false"
+                android:layout_marginHorizontal="@dimen/MarginXLarge"
+                android:text="@string/blank_subtitle"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/loadSelectedBlogsButton"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/MarginXXXLarge"
+                android:layout_marginVertical="@dimen/MarginXLarge"
+                android:text="@string/load_selected_blogs"
+                app:layout_constraintTop_toBottomOf="@id/blankSubtitle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+            </Button>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ViewFlipper>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

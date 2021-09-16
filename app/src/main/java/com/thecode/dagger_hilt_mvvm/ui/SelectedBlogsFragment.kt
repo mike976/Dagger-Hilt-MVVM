@@ -1,13 +1,10 @@
 package com.thecode.dagger_hilt_mvvm.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.thecode.dagger_hilt_mvvm.R
-import com.thecode.dagger_hilt_mvvm.databinding.FragmentBlankBinding
 import com.thecode.dagger_hilt_mvvm.databinding.FragmentSelectedBlogsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,7 +14,8 @@ class SelectedBlogsFragment : DialogFragment() {
     private lateinit var binding: FragmentSelectedBlogsBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return FragmentSelectedBlogsBinding.inflate(layoutInflater,
