@@ -9,7 +9,9 @@ class BlogSelectedMapper @Inject constructor() : EntityMapper<BlogSelectedEntity
         return BlogSelected(
             id = entity.id,
             title = entity.title,
-            date = entity.date
+            date = entity.date,
+            body = entity.body,
+            image = entity.image
         )
     }
 
@@ -17,7 +19,9 @@ class BlogSelectedMapper @Inject constructor() : EntityMapper<BlogSelectedEntity
         return BlogSelectedEntity(
             id = domainModel.id,
             title = domainModel.title,
-            date = domainModel.date
+            date = domainModel.date,
+            body = domainModel.body,
+            image = domainModel.image
         )
     }
 

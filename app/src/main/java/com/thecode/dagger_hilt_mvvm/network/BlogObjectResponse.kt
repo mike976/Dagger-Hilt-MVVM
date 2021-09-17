@@ -6,21 +6,21 @@ import com.google.gson.annotations.SerializedName
 data class BlogObjectResponse(
     @SerializedName("pk")
     @Expose
-    var id: Long,
+    val id: Long,
 
     @SerializedName("title")
     @Expose
-    var title: String,
+    val title: String,
 
     @SerializedName("body")
     @Expose
-    var body: String,
+    val body: String,
 
     @SerializedName("category")
     @Expose
-    var category: String,
+    val category: String,
 
     @SerializedName("image")
     @Expose
-    var image: String
+    val image: String
 )

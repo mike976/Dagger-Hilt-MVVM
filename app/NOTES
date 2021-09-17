@@ -1,10 +1,9 @@
 TODO
 
-1. Implement example of a ViewFlipper e.g loading screen -> to loaded screen
-2. Implement use of resuable control style based on google material design
-3. update DialogFragment to use a android compose view to display a simple list without the need of recyclerview+viewholder, which is a benefit of android compose
+1. Implement use of resuable control style based on google material design
+2. update DialogFragment to use a android compose view to display a simple list without the need of recyclerview+viewholder, which is a benefit of android compose
 - Will mean creating new feature branch that updates the project to run in Android Studio Preview
-4. cleanup all detekt errors - just packagename errors to resolve
+3. cleanup all detekt errors - just packagename errors to resolve
 
 To run ./gradlew for new projects:
 

@@ -39,6 +39,8 @@ class BlogSelectedScheduler @Inject constructor(
             val data = Data.Builder()
                 .putLong("id", blogSelected.id)
                 .putString("title", blogSelected.title)
+                .putString("body", blogSelected.body)
+                .putString("image", blogSelected.image)
                 .build()
 
             // IMPORTANT - Note the HiltWorkeFactory in MyApplication class

@@ -10,11 +10,17 @@ data class BlogSelectedEntity(
 
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "id")
-    var id: Long,
+    val id: Long,
 
     @ColumnInfo(name = "title")
-    var title: String,
+    val title: String,
+
+    @ColumnInfo(name = "body")
+    val body: String,
+
+    @ColumnInfo(name = "image")
+    val image: String,
 
     @ColumnInfo(name = "date")
-    var date: Date?,
+    val date: Date?
 )

@@ -9,7 +9,7 @@ import com.thecode.dagger_hilt_mvvm.common.db.DateTypeConverter
     entities = [
         BlogCacheEntity::class,
         BlogSelectedEntity::class
-    ], version = 4
+    ], version = 5
 )
 @TypeConverters(
     DateTypeConverter::class,

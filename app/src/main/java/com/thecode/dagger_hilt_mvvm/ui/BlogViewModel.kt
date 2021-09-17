@@ -69,7 +69,9 @@ class BlogViewModel
                     BlogSelected(
                         id = it.id,
                         title = it.title,
-                        date = null
+                        date = null,
+                        body = it.body,
+                        image = it.image
                     )
                 )
             }

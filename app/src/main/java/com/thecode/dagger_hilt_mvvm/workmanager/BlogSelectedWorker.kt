@@ -24,11 +24,15 @@ class BlogSelectedWorker @AssistedInject constructor(
 
         val id = inputData.getLong("id", 0)
         val title = inputData.getString("title")!!
+        val body = inputData.getString("body")!!
+        val image = inputData.getString("image")!!
 
         val blogSelected = BlogSelected(
             id = id,
             title = title,
-            date = Date()
+            date = Date(),
+            body = body,
+            image = image
         )
 
         return try {

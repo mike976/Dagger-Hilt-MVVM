@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.thecode.dagger_hilt_mvvm.R
 import com.thecode.dagger_hilt_mvvm.common.showViewId
 import com.thecode.dagger_hilt_mvvm.databinding.FragmentBlankBinding
+import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.SelectedBlogsFragment
 import kotlinx.coroutines.delay
 
 class BlankFragment : Fragment() {
@@ -41,9 +42,7 @@ class BlankFragment : Fragment() {
         }
 
         binding.loadSelectedBlogsButton.setOnClickListener {
-            val fragmentManager = activity?.supportFragmentManager
-            val dialogFragment = SelectedBlogsFragment.newInstance()
-            fragmentManager?.let { dialogFragment.show(it, SelectedBlogsFragment.TAG) }
+            showSelectedBlogsDialog()
         }
 
         // Use of a ViewFlipper: useful to rebuild screen based on diff states.
@@ -68,5 +67,11 @@ class BlankFragment : Fragment() {
         binding?.apply {
             blankViewFlipper.showViewId(targetViewGroupId)
         }
+    }
+
+    private fun showSelectedBlogsDialog() {
+        val fragmentManager = activity?.supportFragmentManager
+        val dialogFragment = SelectedBlogsFragment.newInstance()
+        fragmentManager?.let { dialogFragment.show(it, SelectedBlogsFragment.TAG) }
     }
 }

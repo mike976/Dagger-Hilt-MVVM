@@ -9,17 +9,17 @@ data class BlogCacheEntity(
 
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "id")
-    var id: Long,
+    val id: Long,
 
     @ColumnInfo(name = "title")
-    var title: String,
+    val title: String,
 
     @ColumnInfo(name = "body")
-    var body: String,
+    val body: String,
 
     @ColumnInfo(name = "category")
-    var category: String,
+    val category: String,
 
     @ColumnInfo(name = "image")
-    var image: String
+    val image: String
 )
