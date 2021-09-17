@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.thecode.dagger_hilt_mvvm.common.compose.LoadComposableImage
+import com.thecode.dagger_hilt_mvvm.model.BlogSelected
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.SelectedBlogsViewModel
 
 @Composable
@@ -25,25 +26,35 @@ fun ShowSelectedBlogsScreen(
     Column{
 
         Row() {
-            Text(text = "Jetpack Compose List", style = MaterialTheme.typography.h6,
-            modifier = Modifier.padding(16.dp))
+            ScreenHeader("Jetpack Compose List")
         }
         Row() {
-            LazyColumn(
-                contentPadding = PaddingValues(horizontal = 0.dp, vertical = 0.dp),
-            ) {
-                items(
-                    items = blogsList,
-                    itemContent = { blog ->
-                        BlogListItem(
-                            header = blog.title,
-                            detail = blog.body,
-                            imageUrl = blog.image
-                        )
-                    }
+            BlogList(blogsList)
+        }
+    }
+}
+
+@Composable
+fun ScreenHeader(header: String) {
+    Text(text = header, style = MaterialTheme.typography.h6,
+        modifier = Modifier.padding(16.dp))
+}
+
+@Composable
+fun BlogList(blogList: List<BlogSelected>) {
+    LazyColumn(
+        contentPadding = PaddingValues(horizontal = 0.dp, vertical = 0.dp),
+    ) {
+        items(
+            items = blogList,
+            itemContent = { blog ->
+                BlogListItem(
+                    header = blog.title,
+                    detail = blog.body,
+                    imageUrl = blog.image
                 )
             }
-        }
+        )
     }
 }
 
