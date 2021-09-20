@@ -11,7 +11,7 @@ import androidx.fragment.app.viewModels
 import com.thecode.dagger_hilt_mvvm.R
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.model.SelectedBlogUiModel
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.ShowNoBlogsFoundScreen
-import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.ShowSelectedBlogsScreen
+import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.SelectedBlogsScreen
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.viewmodel.SelectedBlogsViewModel
 
 @AndroidEntryPoint
@@ -20,6 +20,7 @@ class SelectedBlogsDialogFragment : DialogFragment() {
     companion object {
         const val TAG = "SELECTED_BLOGS_DIALOG"
         const val NO_BLOGS_CAPTION = "No selected blogs found"
+        const val HEADER: String = "Jetpack Compose List"
 
         fun newInstance() = SelectedBlogsDialogFragment()
     }
@@ -60,7 +61,7 @@ class SelectedBlogsDialogFragment : DialogFragment() {
             setContent {
                 when (viewState) {
                     is SelectedBlogsViewModel.State.ReceivedSelectedBlogs -> {
-                        ShowSelectedBlogsScreen(viewState) { onBlogItemPressed(it) }
+                        SelectedBlogsScreen(HEADER, viewState) { onBlogItemPressed(it) }
                     }
                     is SelectedBlogsViewModel.State.NoSelectedBlogs -> {
                         ShowNoBlogsFoundScreen(NO_BLOGS_CAPTION)

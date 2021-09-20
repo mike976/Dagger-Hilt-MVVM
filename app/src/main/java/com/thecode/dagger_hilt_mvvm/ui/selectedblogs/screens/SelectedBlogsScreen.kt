@@ -28,7 +28,8 @@ import com.thecode.dagger_hilt_mvvm.R
 // region Composables
 
 @Composable
-fun ShowSelectedBlogsScreen(
+fun SelectedBlogsScreen(
+    header: String,
     viewState: SelectedBlogsViewModel.State.ReceivedSelectedBlogs,
     selectedItemPressedCallback: (SelectedBlogUiModel) -> (Unit)
 ) {
@@ -38,7 +39,7 @@ fun ShowSelectedBlogsScreen(
                 .background(color = Color.Blue)
                 .fillMaxWidth()
         ) {
-            ScreenHeader("Jetpack Compose List")
+            ScreenHeader(header)
         }
         Row() {
             BlogList(viewState.blogs, selectedItemPressedCallback)
@@ -137,7 +138,7 @@ fun BlogListItem(
     group = "Group 1"
 )
 @Composable
-fun PreviewShowSelectedBlogsScreen() {
+fun PreviewScreen() {
     val blog1 = createBlogUiModel(
         id = 1,
         title = "blog header 1",
@@ -155,7 +156,8 @@ fun PreviewShowSelectedBlogsScreen() {
     val viewState = SelectedBlogsViewModel.State.ReceivedSelectedBlogs(
         listOf(blog1, blog2)
     )
-    ShowSelectedBlogsScreen(
+    SelectedBlogsScreen(
+        header = "Header",
         viewState = viewState,
         selectedItemPressedCallback = { (blog) -> { } }
     )
@@ -175,7 +177,7 @@ fun PreviewScreenHeader(){
     group = "Group 1",
 )
 @Composable
-fun PreviewBlogList() {
+fun PreviewList() {
     val blog1 = createBlogUiModel(
         id = 1,
         title = "blog header 1",
@@ -201,7 +203,7 @@ fun PreviewBlogList() {
     group = "Group 1",
 )
 @Composable
-fun PreviewBlogListItem() {
+fun PreviewListItem() {
     val blog = createBlogUiModel(
         id = 1,
         title = "blog header 1",
@@ -220,7 +222,7 @@ fun PreviewBlogListItem() {
     group = "Group 1",
 )
 @Composable
-fun PreviewTappedBlogListItem() {
+fun PreviewTappedListItem() {
     val blog = createBlogUiModel(
         id = 1,
         title = "blog header 1",
