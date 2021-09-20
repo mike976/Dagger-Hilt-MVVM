@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/blogFragment"
-        android:name="com.thecode.dagger_hilt_mvvm.ui.BlogFragment"
+        android:name="com.thecode.dagger_hilt_mvvm.ui.blogs.BlogFragment"
         android:label="@string/fragment_blog"
         tools:layout="@layout/fragment_blog">
         <action

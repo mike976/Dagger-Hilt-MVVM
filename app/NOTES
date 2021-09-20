@@ -1,7 +1,8 @@
 TODO
 
-1. Implement use of resuable control style based on google material design
-2. cleanup all detekt errors - just packagename errors to resolve
+1. modifier composable to handle click events back to fragment (to pass click event to viewmodel which then passes view State back to handle)
+2. Implement use of resuable control style based on google material design
+3. cleanup all detekt errors - just packagename errors to resolve
 
 To run ./gradlew for new projects:
 

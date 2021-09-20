@@ -1,4 +1,4 @@
-package com.thecode.dagger_hilt_mvvm.ui
+package com.thecode.dagger_hilt_mvvm.ui.blogs
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -40,8 +40,11 @@ class BlogViewModel
                     }
                     is DataState.ErrorWithContent -> {
                         viewState.postValue(
-                            State.ReceivedBlogsOffline(dataState.data,
-                                "no network - running offline"))
+                            State.ReceivedBlogsOffline(
+                                dataState.data,
+                                "no network - running offline"
+                            )
+                        )
                     }
                     is DataState.CompleteWithContent -> {
                         viewState.postValue(State.ReceivedBlogs(dataState.data))

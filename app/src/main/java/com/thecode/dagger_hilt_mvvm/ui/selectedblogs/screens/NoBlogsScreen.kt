@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ShowNoBlogsFoundScreen() {
+fun ShowNoBlogsFoundScreen(caption: String) {
     Row {
         Column(
             modifier = Modifier
@@ -20,7 +20,7 @@ fun ShowNoBlogsFoundScreen() {
                 .fillMaxWidth()
                 .align(Alignment.CenterVertically)
         ) {
-            Text(text = "No selected blogs found", style = MaterialTheme.typography.h6)
+            Text(text = caption, style = MaterialTheme.typography.h6)
         }
     }
 }

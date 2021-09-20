@@ -6,7 +6,7 @@ import com.thecode.dagger_hilt_mvvm.common.DataState
 import com.thecode.dagger_hilt_mvvm.common.livedata.OneOffEvent
 import com.thecode.dagger_hilt_mvvm.emptyBlogModel
 import com.thecode.dagger_hilt_mvvm.model.Blog
-import com.thecode.dagger_hilt_mvvm.ui.BlogViewModel
+import com.thecode.dagger_hilt_mvvm.ui.blogs.BlogViewModel
 import com.thecode.dagger_hilt_mvvm.usecase.BlogUseCase
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery

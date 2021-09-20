@@ -9,16 +9,19 @@ import androidx.fragment.app.DialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.fragment.app.viewModels
 import com.thecode.dagger_hilt_mvvm.R
+import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.model.SelectedBlogUiModel
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.ShowNoBlogsFoundScreen
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.ShowSelectedBlogsScreen
+import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.viewmodel.SelectedBlogsViewModel
 
 @AndroidEntryPoint
-class SelectedBlogsFragment : DialogFragment() {
+class SelectedBlogsDialogFragment : DialogFragment() {
 
     companion object {
         const val TAG = "SELECTED_BLOGS_DIALOG"
+        const val NO_BLOGS_CAPTION = "No selected blogs found"
 
-        fun newInstance() = SelectedBlogsFragment()
+        fun newInstance() = SelectedBlogsDialogFragment()
     }
 
     private lateinit var contentView: ComposeView
@@ -46,7 +49,7 @@ class SelectedBlogsFragment : DialogFragment() {
         contentView = ComposeView(requireContext())
 
         with(viewModel) {
-            viewModelState.observe(viewLifecycleOwner, ::onViewStateChanged)
+            viewState.observe(viewLifecycleOwner, ::onViewStateChanged)
         }
 
         return contentView
@@ -57,13 +60,17 @@ class SelectedBlogsFragment : DialogFragment() {
             setContent {
                 when (viewState) {
                     is SelectedBlogsViewModel.State.ReceivedSelectedBlogs -> {
-                        ShowSelectedBlogsScreen(viewState)
+                        ShowSelectedBlogsScreen(viewState) { onBlogItemPressed(it) }
                     }
                     is SelectedBlogsViewModel.State.NoSelectedBlogs -> {
-                        ShowNoBlogsFoundScreen()
+                        ShowNoBlogsFoundScreen(NO_BLOGS_CAPTION)
                     }
                 }
             }
         }
+    }
+
+    fun onBlogItemPressed(item: SelectedBlogUiModel) {
+        viewModel.onBlogItemPressed(item)
     }
 }

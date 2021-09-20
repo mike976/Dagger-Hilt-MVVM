@@ -1,4 +1,4 @@
-package com.thecode.dagger_hilt_mvvm.ui
+package com.thecode.dagger_hilt_mvvm.ui.blogs
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

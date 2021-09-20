@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.thecode.dagger_hilt_mvvm.R
 import com.thecode.dagger_hilt_mvvm.common.showViewId
 import com.thecode.dagger_hilt_mvvm.databinding.FragmentBlankBinding
-import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.SelectedBlogsFragment
+import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.SelectedBlogsDialogFragment
 import kotlinx.coroutines.delay
 
 class BlankFragment : Fragment() {
@@ -71,7 +71,7 @@ class BlankFragment : Fragment() {
 
     private fun showSelectedBlogsDialog() {
         val fragmentManager = activity?.supportFragmentManager
-        val dialogFragment = SelectedBlogsFragment.newInstance()
-        fragmentManager?.let { dialogFragment.show(it, SelectedBlogsFragment.TAG) }
+        val dialogFragment = SelectedBlogsDialogFragment.newInstance()
+        fragmentManager?.let { dialogFragment.show(it, SelectedBlogsDialogFragment.TAG) }
     }
 }
