@@ -9,8 +9,6 @@ import androidx.fragment.app.DialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.fragment.app.viewModels
 import com.thecode.dagger_hilt_mvvm.R
-import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.model.SelectedBlogUiModel
-import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.ShowNoBlogsFoundScreen
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.SelectedBlogsScreen
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.viewmodel.SelectedBlogsViewModel
 
@@ -19,7 +17,6 @@ class SelectedBlogsDialogFragment : DialogFragment() {
 
     companion object {
         const val TAG = "SELECTED_BLOGS_DIALOG"
-        const val NO_BLOGS_CAPTION = "No selected blogs found"
         const val HEADER: String = "Jetpack Compose List"
 
         fun newInstance() = SelectedBlogsDialogFragment()
@@ -45,7 +42,7 @@ class SelectedBlogsDialogFragment : DialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         contentView = ComposeView(requireContext())
 
@@ -62,9 +59,5 @@ class SelectedBlogsDialogFragment : DialogFragment() {
                 SelectedBlogsScreen(HEADER, viewState, viewModel::onBlogItemPressed)
             }
         }
-    }
-
-    fun onBlogItemPressed(item: SelectedBlogUiModel) {
-        viewModel.onBlogItemPressed(item)
     }
 }
