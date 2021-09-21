@@ -59,14 +59,7 @@ class SelectedBlogsDialogFragment : DialogFragment() {
     private fun onViewStateChanged(viewState: SelectedBlogsViewModel.State) {
         contentView.apply {
             setContent {
-                when (viewState) {
-                    is SelectedBlogsViewModel.State.ReceivedSelectedBlogs -> {
-                        SelectedBlogsScreen(HEADER, viewState) { onBlogItemPressed(it) }
-                    }
-                    is SelectedBlogsViewModel.State.NoSelectedBlogs -> {
-                        ShowNoBlogsFoundScreen(NO_BLOGS_CAPTION)
-                    }
-                }
+                SelectedBlogsScreen(HEADER, viewState, viewModel::onBlogItemPressed)
             }
         }
     }

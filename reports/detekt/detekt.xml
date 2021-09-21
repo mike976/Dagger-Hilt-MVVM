@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="4.3">
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt">
+	<error line="1" column="1" severity="warning" message="File &apos;/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt&apos; with &apos;17&apos; functions detected. Defined threshold inside files is set to &apos;11&apos;" source="detekt.TooManyFunctions" />
+	<error line="1" column="1" severity="warning" message="File must end with a newline (\n)" source="detekt.FinalNewline" />
+	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="331" column="3" severity="warning" message="Unnecessary space(s)" source="detekt.NoMultipleSpaces" />
+	<error line="254" column="11" severity="warning" message="Missing spacing after &quot;=&quot;" source="detekt.SpacingAroundOperators" />
+	<error line="263" column="11" severity="warning" message="Missing spacing after &quot;=&quot;" source="detekt.SpacingAroundOperators" />
+	<error line="289" column="11" severity="warning" message="Missing spacing after &quot;=&quot;" source="detekt.SpacingAroundOperators" />
+	<error line="308" column="11" severity="warning" message="Missing spacing after &quot;=&quot;" source="detekt.SpacingAroundOperators" />
+	<error line="29" column="1" severity="warning" message="Needless blank line(s)" source="detekt.NoConsecutiveBlankLines" />
+	<error line="249" column="28" severity="warning" message="Missing spacing before &quot;{&quot;" source="detekt.SpacingAroundCurly" />
+	<error line="258" column="26" severity="warning" message="Missing spacing before &quot;{&quot;" source="detekt.SpacingAroundCurly" />
+	<error line="46" column="12" severity="warning" message="Unexpected spacing before &quot;(&quot;" source="detekt.SpacingAroundParens" />
+	<error line="6" column="1" severity="warning" message="Wildcard import" source="detekt.NoWildcardImports" />
+	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+	<error line="1" column="1" severity="warning" message="The file /Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt is not ending with a new line." source="detekt.NewLineAtEndOfFile" />
+	<error line="6" column="1" severity="warning" message="androidx.compose.foundation.layout.* is a wildcard import. Replace it with fully qualified imports." source="detekt.WildcardImport" />
+</file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/androidTest/java/com/thecode/dagger_hilt_mvvm/ExampleInstrumentedTest.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 </file>
@@ -43,13 +61,15 @@
 </file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/viewmodel/SelectedBlogsViewModel.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
+	<error line="68" column="23" severity="warning" message="Missing spacing before &quot;:&quot;" source="detekt.SpacingAroundColon" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
+	<error line="32" column="19" severity="warning" message="This expression contains a magic number. Consider defining it to a well named constant." source="detekt.MagicNumber" />
 </file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/NoBlogsScreen.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>
-<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt">
+<file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/model/UiModelFactory.kt">
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>
@@ -62,6 +82,7 @@
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>
 <file name="/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/SelectedBlogsDialogFragment.kt">
+	<error line="13" column="1" severity="warning" message="Unused import" source="detekt.NoUnusedImports" />
 	<error line="1" column="1" severity="warning" message="Package name must not contain underscore" source="detekt.PackageName" />
 	<error line="1" column="1" severity="warning" message="Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*" source="detekt.PackageNaming" />
 </file>

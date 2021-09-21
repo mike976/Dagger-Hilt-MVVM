@@ -9,6 +9,7 @@ import com.thecode.dagger_hilt_mvvm.repository.BlogRepository
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.model.SelectedBlogUiModel
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.model.SelectedBlogUiModelMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -25,18 +26,23 @@ class SelectedBlogsViewModel @Inject constructor(
 
     init {
         viewModelScope.launch(appDispatchers.default) {
+
+            // simulate loading delay
+            state.postValue(State.Loading)
+            delay(2500L)
+
             repository.getBlogsSelected().firstOrNull {
                 when {
                     it.isNullOrEmpty().not() -> {
                         state.postValue(
-                            State.ReceivedSelectedBlogs(
+                            State.LoadedWithContent(
                                 uiModelMapper.mapFromDomainModelList(it, null)
                             )
                         )
                         true
                     }
                     else -> {
-                        state.postValue(State.NoSelectedBlogs)
+                        state.postValue(State.LoadedWithNoContent)
                         false
                     }
                 }
@@ -48,7 +54,7 @@ class SelectedBlogsViewModel @Inject constructor(
         viewModelScope.launch(appDispatchers.default) {
             repository.getBlogsSelected().firstOrNull()?.let {
                 state.postValue(
-                    State.ReceivedSelectedBlogs(
+                    State.LoadedWithContent(
                         uiModelMapper.mapFromDomainModelList(it, item)
                     )
                 )
@@ -57,7 +63,8 @@ class SelectedBlogsViewModel @Inject constructor(
     }
 
     sealed class State {
-        data class ReceivedSelectedBlogs(val blogs: List<SelectedBlogUiModel>) : State()
-        object NoSelectedBlogs : State()
+        data class LoadedWithContent(val blogs: List<SelectedBlogUiModel>) : State()
+        object LoadedWithNoContent : State()
+        object Loading: State()
     }
 }

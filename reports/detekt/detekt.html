@@ -72,11 +72,11 @@ pre {
 
 <div>
   <ul>
-    <li>77 number of properties</li>
-    <li>131 number of functions</li>
+    <li>88 number of properties</li>
+    <li>145 number of functions</li>
     <li>66 number of classes</li>
-    <li>20 number of packages</li>
-    <li>59 number of kt files</li>
+    <li>21 number of packages</li>
+    <li>60 number of kt files</li>
   </ul>
 </div>
 
@@ -85,25 +85,110 @@ pre {
 
 <div>
   <ul>
-    <li>2,161 lines of code (loc)</li>
-    <li>1,705 source lines of code (sloc)</li>
-    <li>986 logical lines of code (lloc)</li>
-    <li>73 comment lines of code (cloc)</li>
-    <li>183 cyclomatic complexity (mcc)</li>
-    <li>33 cognitive complexity</li>
-    <li>111 number of total code smells</li>
+    <li>2,400 lines of code (loc)</li>
+    <li>1,912 source lines of code (sloc)</li>
+    <li>1,153 logical lines of code (lloc)</li>
+    <li>79 comment lines of code (cloc)</li>
+    <li>199 cyclomatic complexity (mcc)</li>
+    <li>37 cognitive complexity</li>
+    <li>130 number of total code smells</li>
     <li>4% comment source ratio</li>
-    <li>185 mcc per 1,000 lloc</li>
+    <li>172 mcc per 1,000 lloc</li>
     <li>112 code smells per 1,000 lloc</li>
   </ul>
 </div>
 
 
 <h2>Findings</h2>
-<div>Total: 111
-  <h3>formatting: 59</h3>
+<div>Total: 130
+  <h3>complexity: 1</h3>
+  <details id="TooManyFunctions" open="open">
+    <summary class="rule-container"><span class="rule">TooManyFunctions: 1 </span><span class="description">Too many functions inside a/an file/class/object/interface always indicate a violation of the single responsibility principle. Maybe the file/class/object/interface wants to manage too many things at once. Extract functionality which clearly belongs together.</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:1:1</span><span class="message">File '/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt' with '17' functions detected. Defined threshold inside files is set to '11'</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.compose.foundation.Image
+<span class="lineno">   4 </span>import androidx.compose.foundation.background
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>formatting: 73</h3>
+  <details id="FinalNewline" open="open">
+    <summary class="rule-container"><span class="rule">FinalNewline: 1 </span><span class="description">Detects missing final newlines</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:1:1</span><span class="message">File must end with a newline (\n)</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens</span>
+<span class="lineno">   2 </span><span class="error"></span>
+<span class="lineno">   3 </span><span class="error">import androidx.compose.foundation.Image</span>
+<span class="lineno">   4 </span><span class="error">import androidx.compose.foundation.background</span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="NoConsecutiveBlankLines" open="open">
+    <summary class="rule-container"><span class="rule">NoConsecutiveBlankLines: 1 </span><span class="description">Reports consecutive blank lines</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:29:1</span><span class="message">Needless blank line(s)</span>
+        <pre><code><span class="lineno">  26 </span>import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.previews.emptySelectedBlogUiModel
+<span class="lineno">  27 </span>import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.viewmodel.SelectedBlogsViewModel
+<span class="lineno">  28 </span>
+<span class="lineno">  29 </span><span class="error"></span>
+<span class="lineno">  30 </span><span class="error">//</span> region Composables
+<span class="lineno">  31 </span>
+<span class="lineno">  32 </span>@Composable
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="NoMultipleSpaces" open="open">
+    <summary class="rule-container"><span class="rule">NoMultipleSpaces: 1 </span><span class="description">Reports multiple space usages</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:331:3</span><span class="message">Unnecessary space(s)</span>
+        <pre><code><span class="lineno"> 328 </span>    title: String,
+<span class="lineno"> 329 </span>    body: String,
+<span class="lineno"> 330 </span>    isSelected: Boolean
+<span class="lineno"> 331 </span>) <span class="error"> =</span> emptySelectedBlogUiModel().copy(
+<span class="lineno"> 332 </span>    id = id,
+<span class="lineno"> 333 </span>    title = title,
+<span class="lineno"> 334 </span>    body = body,
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="NoUnusedImports" open="open">
+    <summary class="rule-container"><span class="rule">NoUnusedImports: 1 </span><span class="description">Detects unused imports</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/SelectedBlogsDialogFragment.kt:13:1</span><span class="message">Unused import</span>
+        <pre><code><span class="lineno">  10 </span>import androidx.fragment.app.viewModels
+<span class="lineno">  11 </span>import com.thecode.dagger_hilt_mvvm.R
+<span class="lineno">  12 </span>import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.model.SelectedBlogUiModel
+<span class="lineno">  13 </span><span class="error">import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.ShowNoBlogsFoundScreen</span>
+<span class="lineno">  14 </span>import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.SelectedBlogsScreen
+<span class="lineno">  15 </span>import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.viewmodel.SelectedBlogsViewModel
+<span class="lineno">  16 </span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="NoWildcardImports" open="open">
+    <summary class="rule-container"><span class="rule">NoWildcardImports: 1 </span><span class="description">Detects wildcast import usages</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:6:1</span><span class="message">Wildcard import</span>
+        <pre><code><span class="lineno">   3 </span>import androidx.compose.foundation.Image
+<span class="lineno">   4 </span>import androidx.compose.foundation.background
+<span class="lineno">   5 </span>import androidx.compose.foundation.clickable
+<span class="lineno">   6 </span><span class="error">import androidx.compose.foundation.layout.*</span>
+<span class="lineno">   7 </span>import androidx.compose.foundation.lazy.LazyColumn
+<span class="lineno">   8 </span>import androidx.compose.foundation.lazy.items
+<span class="lineno">   9 </span>import androidx.compose.foundation.shape.CornerSize
+</code></pre>
+      </li>
+    </ul>
+  </details>
   <details id="PackageName" open="open">
-    <summary class="rule-container"><span class="rule">PackageName: 59 </span><span class="description">Checks package name is formatted correctly</span></summary>
+    <summary class="rule-container"><span class="rule">PackageName: 60 </span><span class="description">Checks package name is formatted correctly</span></summary>
     <ul>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/androidTest/java/com/thecode/dagger_hilt_mvvm/ExampleInstrumentedTest.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
@@ -420,6 +505,13 @@ pre {
 <span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.util.UiModelMapper
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/model/UiModelFactory.kt:1:1</span><span class="message">Package name must not contain underscore</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.previews</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.model.SelectedBlogUiModel
+<span class="lineno">   4 </span>
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/NoBlogsScreen.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens</span>
 <span class="lineno">   2 </span>
@@ -430,8 +522,8 @@ pre {
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:1:1</span><span class="message">Package name must not contain underscore</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens</span>
 <span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import androidx.compose.foundation.background
-<span class="lineno">   4 </span>import androidx.compose.foundation.clickable
+<span class="lineno">   3 </span>import androidx.compose.foundation.Image
+<span class="lineno">   4 </span>import androidx.compose.foundation.background
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/viewmodel/SelectedBlogsViewModel.kt:1:1</span><span class="message">Package name must not contain underscore</span>
@@ -520,9 +612,109 @@ pre {
       </li>
     </ul>
   </details>
-  <h3>naming: 52</h3>
+  <details id="SpacingAroundColon" open="open">
+    <summary class="rule-container"><span class="rule">SpacingAroundColon: 1 </span><span class="description">Reports spaces around colons</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/viewmodel/SelectedBlogsViewModel.kt:68:23</span><span class="message">Missing spacing before &quot;:&quot;</span>
+        <pre><code><span class="lineno">  65 </span>    sealed class State {
+<span class="lineno">  66 </span>        data class LoadedWithContent(val blogs: List&lt;SelectedBlogUiModel&gt;) : State()
+<span class="lineno">  67 </span>        object LoadedWithNoContent : State()
+<span class="lineno">  68 </span>        object Loading<span class="error">:</span> State()
+<span class="lineno">  69 </span>    }
+<span class="lineno">  70 </span>}
+<span class="lineno">  71 </span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="SpacingAroundCurly" open="open">
+    <summary class="rule-container"><span class="rule">SpacingAroundCurly: 2 </span><span class="description">Reports spaces around curly braces</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:249:28</span><span class="message">Missing spacing before &quot;{&quot;</span>
+        <pre><code><span class="lineno"> 246 </span>    group = &quot;Group 1&quot;
+<span class="lineno"> 247 </span>)
+<span class="lineno"> 248 </span>@Composable
+<span class="lineno"> 249 </span>fun LoadingContentPreview()<span class="error">{</span>
+<span class="lineno"> 250 </span>    LoadingContentView()
+<span class="lineno"> 251 </span>}
+<span class="lineno"> 252 </span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:258:26</span><span class="message">Missing spacing before &quot;{&quot;</span>
+        <pre><code><span class="lineno"> 255 </span>    group = &quot;Group 1&quot;,
+<span class="lineno"> 256 </span>)
+<span class="lineno"> 257 </span>@Composable
+<span class="lineno"> 258 </span>fun PreviewScreenHeader()<span class="error">{</span>
+<span class="lineno"> 259 </span>    HeaderView(header = &quot;Screen Header&quot;)
+<span class="lineno"> 260 </span>}
+<span class="lineno"> 261 </span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="SpacingAroundOperators" open="open">
+    <summary class="rule-container"><span class="rule">SpacingAroundOperators: 4 </span><span class="description">Reports spaces around operators</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:254:11</span><span class="message">Missing spacing after &quot;=&quot;</span>
+        <pre><code><span class="lineno"> 251 </span>}
+<span class="lineno"> 252 </span>
+<span class="lineno"> 253 </span>@Preview(
+<span class="lineno"> 254 </span>    name =<span class="error">&quot;</span>Header Preview&quot;,
+<span class="lineno"> 255 </span>    group = &quot;Group 1&quot;,
+<span class="lineno"> 256 </span>)
+<span class="lineno"> 257 </span>@Composable
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:263:11</span><span class="message">Missing spacing after &quot;=&quot;</span>
+        <pre><code><span class="lineno"> 260 </span>}
+<span class="lineno"> 261 </span>
+<span class="lineno"> 262 </span>@Preview(
+<span class="lineno"> 263 </span>    name =<span class="error">&quot;</span>List Preview&quot;,
+<span class="lineno"> 264 </span>    group = &quot;Group 1&quot;,
+<span class="lineno"> 265 </span>)
+<span class="lineno"> 266 </span>@Composable
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:289:11</span><span class="message">Missing spacing after &quot;=&quot;</span>
+        <pre><code><span class="lineno"> 286 </span>}
+<span class="lineno"> 287 </span>
+<span class="lineno"> 288 </span>@Preview(
+<span class="lineno"> 289 </span>    name =<span class="error">&quot;</span>List Item Preview&quot;,
+<span class="lineno"> 290 </span>    group = &quot;Group 1&quot;,
+<span class="lineno"> 291 </span>)
+<span class="lineno"> 292 </span>@Composable
+</code></pre>
+      </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:308:11</span><span class="message">Missing spacing after &quot;=&quot;</span>
+        <pre><code><span class="lineno"> 305 </span>}
+<span class="lineno"> 306 </span>
+<span class="lineno"> 307 </span>@Preview(
+<span class="lineno"> 308 </span>    name =<span class="error">&quot;</span>List Item Tapped Preview&quot;,
+<span class="lineno"> 309 </span>    group = &quot;Group 1&quot;,
+<span class="lineno"> 310 </span>)
+<span class="lineno"> 311 </span>@Composable
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="SpacingAroundParens" open="open">
+    <summary class="rule-container"><span class="rule">SpacingAroundParens: 1 </span><span class="description">Reports spaces around parentheses</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:46:12</span><span class="message">Unexpected spacing before &quot;(&quot;</span>
+        <pre><code><span class="lineno">  43 </span>        ) {
+<span class="lineno">  44 </span>            HeaderView(header)
+<span class="lineno">  45 </span>        }
+<span class="lineno">  46 </span>        Row<span class="error"> </span>(
+<span class="lineno">  47 </span>            modifier = Modifier.fillMaxSize(),
+<span class="lineno">  48 </span>            horizontalArrangement = Arrangement.Center,
+<span class="lineno">  49 </span>            verticalAlignment = Alignment.CenterVertically
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>naming: 53</h3>
   <details id="PackageNaming" open="open">
-    <summary class="rule-container"><span class="rule">PackageNaming: 52 </span><span class="description">Package names should match the naming convention set in the configuration.</span></summary>
+    <summary class="rule-container"><span class="rule">PackageNaming: 53 </span><span class="description">Package names should match the naming convention set in the configuration.</span></summary>
     <ul>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/AppDispatchers.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm</span>
@@ -832,6 +1024,13 @@ pre {
 <span class="lineno">   4 </span>import com.thecode.dagger_hilt_mvvm.util.UiModelMapper
 </code></pre>
       </li>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/model/UiModelFactory.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.previews</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.model.SelectedBlogUiModel
+<span class="lineno">   4 </span>
+</code></pre>
+      </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/NoBlogsScreen.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens</span>
 <span class="lineno">   2 </span>
@@ -842,8 +1041,8 @@ pre {
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
         <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens</span>
 <span class="lineno">   2 </span>
-<span class="lineno">   3 </span>import androidx.compose.foundation.background
-<span class="lineno">   4 </span>import androidx.compose.foundation.clickable
+<span class="lineno">   3 </span>import androidx.compose.foundation.Image
+<span class="lineno">   4 </span>import androidx.compose.foundation.background
 </code></pre>
       </li>
       <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/viewmodel/SelectedBlogsViewModel.kt:1:1</span><span class="message">Package name should match the pattern: [a-z]+(\.[a-z][A-Za-z0-9]*)*</span>
@@ -890,10 +1089,53 @@ pre {
       </li>
     </ul>
   </details>
+  <h3>style: 3</h3>
+  <details id="MagicNumber" open="open">
+    <summary class="rule-container"><span class="rule">MagicNumber: 1 </span><span class="description">Report magic numbers. Magic number is a numeric literal that is not defined as a constant and hence it's unclear what the purpose of this number is. It's better to declare such numbers as constants and give them a proper name. By default, -1, 0, 1, and 2 are not considered to be magic numbers.</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/viewmodel/SelectedBlogsViewModel.kt:32:19</span><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  29 </span>
+<span class="lineno">  30 </span>            // simulate loading delay
+<span class="lineno">  31 </span>            state.postValue(State.Loading)
+<span class="lineno">  32 </span>            delay(<span class="error">2500L</span>)
+<span class="lineno">  33 </span>
+<span class="lineno">  34 </span>            repository.getBlogsSelected().firstOrNull {
+<span class="lineno">  35 </span>                when {
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="NewLineAtEndOfFile" open="open">
+    <summary class="rule-container"><span class="rule">NewLineAtEndOfFile: 1 </span><span class="description">Checks whether files end with a line separator.</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:1:1</span><span class="message">The file /Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">   1 </span><span class="error">package com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens</span>
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import androidx.compose.foundation.Image
+<span class="lineno">   4 </span>import androidx.compose.foundation.background
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="WildcardImport" open="open">
+    <summary class="rule-container"><span class="rule">WildcardImport: 1 </span><span class="description">Wildcard imports should be replaced with imports using fully qualified class names. Wildcard imports can lead to naming conflicts. A library update can introduce naming clashes with your classes which results in compilation errors.</span></summary>
+    <ul>
+      <li><span class="location">/Users/michaelbullock/Documents/Personal Repos/Hilt_Android/Dagger-Hilt-MVVM/app/src/main/java/com/thecode/dagger_hilt_mvvm/ui/selectedblogs/screens/SelectedBlogsScreen.kt:6:1</span><span class="message">androidx.compose.foundation.layout.* is a wildcard import. Replace it with fully qualified imports.</span>
+        <pre><code><span class="lineno">   3 </span>import androidx.compose.foundation.Image
+<span class="lineno">   4 </span>import androidx.compose.foundation.background
+<span class="lineno">   5 </span>import androidx.compose.foundation.clickable
+<span class="lineno">   6 </span><span class="error">import androidx.compose.foundation.layout.*</span>
+<span class="lineno">   7 </span>import androidx.compose.foundation.lazy.LazyColumn
+<span class="lineno">   8 </span>import androidx.compose.foundation.lazy.items
+<span class="lineno">   9 </span>import androidx.compose.foundation.shape.CornerSize
+</code></pre>
+      </li>
+    </ul>
+  </details>
 </div>
 
 
-generated with <a href="https://detekt.github.io/">detekt version 1.17.1</a> on 2021-09-20 11:00:24 UTC.
+generated with <a href="https://detekt.github.io/">detekt version 1.17.1</a> on 2021-09-21 13:36:41 UTC.
 
 </body>
 </html>

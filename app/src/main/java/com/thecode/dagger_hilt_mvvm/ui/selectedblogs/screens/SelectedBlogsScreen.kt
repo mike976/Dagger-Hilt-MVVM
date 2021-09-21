@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -19,18 +20,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.thecode.dagger_hilt_mvvm.R
 import com.thecode.dagger_hilt_mvvm.common.compose.LoadComposableImage
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.model.SelectedBlogUiModel
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.screens.previews.emptySelectedBlogUiModel
 import com.thecode.dagger_hilt_mvvm.ui.selectedblogs.viewmodel.SelectedBlogsViewModel
-import com.thecode.dagger_hilt_mvvm.R
+
 
 // region Composables
 
 @Composable
 fun SelectedBlogsScreen(
     header: String,
-    viewState: SelectedBlogsViewModel.State.ReceivedSelectedBlogs,
+    viewState: SelectedBlogsViewModel.State,
     selectedItemPressedCallback: (SelectedBlogUiModel) -> (Unit)
 ) {
     Column {
@@ -39,16 +41,55 @@ fun SelectedBlogsScreen(
                 .background(color = Color.Blue)
                 .fillMaxWidth()
         ) {
-            ScreenHeader(header)
+            HeaderView(header)
         }
-        Row() {
-            BlogList(viewState.blogs, selectedItemPressedCallback)
+        Row (
+            modifier = Modifier.fillMaxSize(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            when (viewState) {
+                is SelectedBlogsViewModel.State.Loading -> {
+                    LoadingContentView()
+                }
+                is SelectedBlogsViewModel.State.LoadedWithContent -> {
+                    ContentView(viewState.blogs, selectedItemPressedCallback)
+                }
+                is SelectedBlogsViewModel.State.LoadedWithNoContent -> {
+                    NoContentView()
+                }
+            }
         }
     }
 }
 
 @Composable
-fun ScreenHeader(
+fun ContentView(
+    data: List<SelectedBlogUiModel>,
+    selectedItemPressedCallback: (SelectedBlogUiModel) -> (Unit)
+) {
+    BlogList(data, selectedItemPressedCallback)
+}
+
+@Composable
+fun NoContentView() {
+    Text(text = "No data",
+        style = MaterialTheme.typography.h6,
+        color = Color.Blue,
+        modifier = Modifier
+            .padding(16.dp)
+    )
+}
+
+@Composable
+fun LoadingContentView() {
+    CircularProgressIndicator(
+        color = Color.Blue
+    )
+}
+
+@Composable
+fun HeaderView(
     header: String
 ) {
     Text(text = header,
@@ -134,11 +175,11 @@ fun BlogListItem(
 
 // region Previews
 @Preview(
-    "Screen",
+    "Screen with Content Preview",
     group = "Group 1"
 )
 @Composable
-fun PreviewScreen() {
+fun PreviewScreenWithContent() {
     val blog1 = createBlogUiModel(
         id = 1,
         title = "blog header 1",
@@ -153,7 +194,7 @@ fun PreviewScreen() {
         isSelected = false
     )
 
-    val viewState = SelectedBlogsViewModel.State.ReceivedSelectedBlogs(
+    val viewState = SelectedBlogsViewModel.State.LoadedWithContent(
         listOf(blog1, blog2)
     )
     SelectedBlogsScreen(
@@ -164,16 +205,62 @@ fun PreviewScreen() {
 }
 
 @Preview(
-    name ="Header",
+    name = "Screen with No Content Preview",
+    group = "Group 1"
+)
+@Composable
+fun PreviewScreenWithNoContent() {
+    val viewState = SelectedBlogsViewModel.State.LoadedWithNoContent
+    SelectedBlogsScreen(
+        header = "Header",
+        viewState = viewState,
+        selectedItemPressedCallback = { (blog) -> { } }
+    )
+}
+
+@Preview(
+    name = "Screen with Loading Content Preview",
+    group = "Group 1"
+)
+@Composable
+fun PreviewScreenWithLoadingContent() {
+    val viewState = SelectedBlogsViewModel.State.Loading
+    SelectedBlogsScreen(
+        header = "Header",
+        viewState = viewState,
+        selectedItemPressedCallback = { (blog) -> { } }
+    )
+}
+
+@Preview(
+    name = "No Content Preview",
+    group = "Group 1"
+)
+@Composable
+fun PreviewNoContentView() {
+    NoContentView()
+}
+
+@Preview(
+    name = "Loading Content Preview",
+    group = "Group 1"
+)
+@Composable
+fun LoadingContentPreview(){
+    LoadingContentView()
+}
+
+@Preview(
+    name ="Header Preview",
     group = "Group 1",
 )
 @Composable
 fun PreviewScreenHeader(){
-    ScreenHeader(header = "Screen Header")
+    HeaderView(header = "Screen Header")
 }
 
 @Preview(
-    name ="List",
+    name ="List Preview",
     group = "Group 1",
 )
 @Composable
@@ -199,7 +286,7 @@ fun PreviewList() {
 }
 
 @Preview(
-    name ="List Item",
+    name ="List Item Preview",
     group = "Group 1",
 )
 @Composable
@@ -218,7 +305,7 @@ fun PreviewListItem() {
 }
 
 @Preview(
-    name ="List Item Tapped",
+    name ="List Item Tapped Preview",
     group = "Group 1",
 )
 @Composable
