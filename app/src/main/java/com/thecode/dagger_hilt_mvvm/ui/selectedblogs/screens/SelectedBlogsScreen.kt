@@ -46,7 +46,7 @@ fun SelectedBlogsScreen(
         Row (
             modifier = Modifier.fillMaxSize(),
             horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment =  if (viewState is SelectedBlogsViewModel.State.LoadedWithContent) Alignment.Top else Alignment.CenterVertically
         ) {
             when (viewState) {
                 is SelectedBlogsViewModel.State.Loading -> {
